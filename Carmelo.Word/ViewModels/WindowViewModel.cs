@@ -1,7 +1,6 @@
 ﻿using Carmelo.Base.ViewModels;
 using System.Windows;
 using System.Windows.Input;
-using System;
 
 namespace Carmelo.Word.ViewModels
 {
@@ -10,14 +9,19 @@ namespace Carmelo.Word.ViewModels
     /// </summary>
     public class WindowViewModel : BaseViewModel
     {
-
         #region Public Properties
 
         public int BorderSize { get; set; } = 6;
 
         public int TitleHeight { get; set; } = 36;
 
-        public Thickness ResizeBorderThickness { get { return new Thickness(BorderSize + OuterMarginSize); } }
+        public double WindowMinimumWidth { get; set; } = 400;
+
+        public double WindowMinimumHeight { get; set; } = 400;
+
+        public Thickness ResizedBorderThickness { get { return new Thickness(BorderSize + OuterMarginSize); } }
+
+        public Thickness InnerContentPadding { get { return new Thickness(BorderSize); } }
 
         public int OuterMarginSize
         {
@@ -81,7 +85,7 @@ namespace Carmelo.Word.ViewModels
 
             window.StateChanged += (sender, e) =>
             {
-                OnPropertyChanged(nameof(ResizeBorderThickness));
+                OnPropertyChanged(nameof(ResizedBorderThickness));
                 OnPropertyChanged(nameof(OuterMarginSize));
                 OnPropertyChanged(nameof(OuterMarginThickness));
                 OnPropertyChanged(nameof(WindowRadius));
@@ -97,6 +101,11 @@ namespace Carmelo.Word.ViewModels
         private Point getMousePosition()
         {
             var position = Mouse.GetPosition(window);
+
+            if (window.WindowState == WindowState.Maximized)
+            {
+                return new Point(position.X, position.Y);
+            }
 
             return new Point(position.X + window.Left, position.Y + window.Top);
         }
