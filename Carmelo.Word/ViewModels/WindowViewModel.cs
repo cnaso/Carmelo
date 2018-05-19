@@ -1,23 +1,26 @@
 ﻿using Carmelo.Base.ViewModels;
+using Carmelo.Word.DataModels;
 using System.Windows;
 using System.Windows.Input;
 
 namespace Carmelo.Word.ViewModels
 {
     /// <summary>
-    /// View Model to handle the custom Window.
+    /// View Model to handle the custom <see cref="MainWindow"/>.
     /// </summary>
     public class WindowViewModel : BaseViewModel
     {
         #region Public Properties
 
-        public int BorderSize { get; set; } = 6;
+        public int BorderSize { get { return Borderless ? 0 : 6; } }
 
         public int TitleHeight { get; set; } = 36;
 
         public double WindowMinimumWidth { get; set; } = 400;
 
         public double WindowMinimumHeight { get; set; } = 400;
+
+        public bool Borderless { get { return (window.WindowState == WindowState.Maximized); } }
 
         public Thickness ResizedBorderThickness { get { return new Thickness(BorderSize + OuterMarginSize); } }
 
@@ -27,7 +30,7 @@ namespace Carmelo.Word.ViewModels
         {
             get
             {
-                return window.WindowState == WindowState.Maximized ? 0 : outerMarginSize;
+                return Borderless ? 5 : outerMarginSize;
             }
 
             set
@@ -42,7 +45,7 @@ namespace Carmelo.Word.ViewModels
         {
             get
             {
-                return window.WindowState == WindowState.Maximized ? 0 : windowRadius;
+                return Borderless ? 0 : windowRadius;
             }
 
             set
@@ -54,6 +57,8 @@ namespace Carmelo.Word.ViewModels
         public CornerRadius WindowCornerRadius { get { return new CornerRadius(WindowRadius); } }
 
         public GridLength TitleHeightGridLength { get { return new GridLength(TitleHeight + BorderSize); } }
+
+        public ApplicationPage CurrentPage { get; set; } = ApplicationPage.Login;
 
         #endregion
 
@@ -92,17 +97,21 @@ namespace Carmelo.Word.ViewModels
                 OnPropertyChanged(nameof(WindowCornerRadius));
             };
 
-            MinimizeCommand = new RelayCommand(() => window.WindowState = WindowState.Maximized);
+            MinimizeCommand = new RelayCommand(() => window.WindowState = WindowState.Minimized);
             MaximizeCommand = new RelayCommand(() => window.WindowState ^= WindowState.Maximized);
             CloseCommand = new RelayCommand(() => window.Close());
             MenuCommand = new RelayCommand(() => SystemCommands.ShowSystemMenu(window, getMousePosition()));
         }
 
+        /// <summary>
+        /// Gets the mouse cursor position point.
+        /// </summary>
+        /// <returns></returns>
         private Point getMousePosition()
         {
             var position = Mouse.GetPosition(window);
 
-            if (window.WindowState == WindowState.Maximized)
+            if (Borderless)
             {
                 return new Point(position.X, position.Y);
             }

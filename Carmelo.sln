@@ -5,6 +5,11 @@ VisualStudioVersion = 15.0.26430.12
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Carmelo.Word", "Carmelo.Word\Carmelo.Word.csproj", "{BEC68388-6CD4-4C87-B682-7D5DB8AF0ADC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Carmelo.Word.UnitTests", "Carmelo.Word.UnitTests\Carmelo.Word.UnitTests.csproj", "{F436029F-A179-4FB2-9E72-085766BF1B01}"
+	ProjectSection(ProjectDependencies) = postProject
+		{BEC68388-6CD4-4C87-B682-7D5DB8AF0ADC} = {BEC68388-6CD4-4C87-B682-7D5DB8AF0ADC}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +20,10 @@ Global
 		{BEC68388-6CD4-4C87-B682-7D5DB8AF0ADC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BEC68388-6CD4-4C87-B682-7D5DB8AF0ADC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BEC68388-6CD4-4C87-B682-7D5DB8AF0ADC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F436029F-A179-4FB2-9E72-085766BF1B01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F436029F-A179-4FB2-9E72-085766BF1B01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F436029F-A179-4FB2-9E72-085766BF1B01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F436029F-A179-4FB2-9E72-085766BF1B01}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
