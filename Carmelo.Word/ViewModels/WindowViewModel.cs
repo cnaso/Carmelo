@@ -1,5 +1,6 @@
 ﻿using Carmelo.Base.ViewModels;
 using Carmelo.Word.DataModels;
+using Carmelo.Word.Windows;
 using System.Windows;
 using System.Windows.Input;
 
@@ -14,23 +15,23 @@ namespace Carmelo.Word.ViewModels
 
         public int BorderSize { get { return Borderless ? 0 : 6; } }
 
-        public int TitleHeight { get; set; } = 36;
+        public int TitleHeight { get; set; } = 30;
 
         public double WindowMinimumWidth { get; set; } = 400;
 
         public double WindowMinimumHeight { get; set; } = 400;
 
-        public bool Borderless { get { return (window.WindowState == WindowState.Maximized); } }
+        public bool Borderless { get { return (window.WindowState == WindowState.Maximized || dockPosition != WindowDockPosition.Undocked); } }
 
         public Thickness ResizedBorderThickness { get { return new Thickness(BorderSize + OuterMarginSize); } }
 
-        public Thickness InnerContentPadding { get { return new Thickness(BorderSize); } }
+        public Thickness InnerContentPadding { get; set; } = new Thickness(0);
 
         public int OuterMarginSize
         {
             get
             {
-                return Borderless ? 5 : outerMarginSize;
+                return Borderless ? 0 : outerMarginSize;
             }
 
             set
@@ -82,6 +83,8 @@ namespace Carmelo.Word.ViewModels
 
         private int windowRadius = 10;
 
+        private WindowDockPosition dockPosition = WindowDockPosition.Undocked;
+
         #endregion
 
         public WindowViewModel(Window window)
@@ -90,17 +93,21 @@ namespace Carmelo.Word.ViewModels
 
             window.StateChanged += (sender, e) =>
             {
-                OnPropertyChanged(nameof(ResizedBorderThickness));
-                OnPropertyChanged(nameof(OuterMarginSize));
-                OnPropertyChanged(nameof(OuterMarginThickness));
-                OnPropertyChanged(nameof(WindowRadius));
-                OnPropertyChanged(nameof(WindowCornerRadius));
+                WindowResized();
             };
 
             MinimizeCommand = new RelayCommand(() => window.WindowState = WindowState.Minimized);
             MaximizeCommand = new RelayCommand(() => window.WindowState ^= WindowState.Maximized);
             CloseCommand = new RelayCommand(() => window.Close());
             MenuCommand = new RelayCommand(() => SystemCommands.ShowSystemMenu(window, getMousePosition()));
+
+            var resizer = new WindowResizer(window);
+
+            resizer.WindowDockChanged += (dock) =>
+            {
+                dockPosition = dock;
+                WindowResized();
+            };
         }
 
         /// <summary>
@@ -117,6 +124,18 @@ namespace Carmelo.Word.ViewModels
             }
 
             return new Point(position.X + window.Left, position.Y + window.Top);
+        }
+
+        /// <summary>
+        /// Fires property changed events for the window borders and margins.
+        /// </summary>
+        private void WindowResized()
+        {
+            OnPropertyChanged(nameof(ResizedBorderThickness));
+            OnPropertyChanged(nameof(OuterMarginSize));
+            OnPropertyChanged(nameof(OuterMarginThickness));
+            OnPropertyChanged(nameof(WindowRadius));
+            OnPropertyChanged(nameof(WindowCornerRadius));
         }
     }
 }
