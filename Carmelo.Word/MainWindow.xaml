@@ -9,11 +9,11 @@
         WindowStyle="None"
         AllowsTransparency="True"
         WindowStartupLocation="CenterScreen"
-        x:Name="AppWindow"
+        Name="AppWindow"
         Icon="Images/Logo/Logo.png"
         MinWidth="{Binding WindowMinimumWidth}"
         MinHeight="{Binding WindowMinimumHeight}"
-        Title="Word" Height="500" Width="800">
+        Title="WORD" Height="500" Width="800">
 
     <Window.Resources>
         <Style TargetType="{x:Type local:MainWindow}">
@@ -70,11 +70,13 @@
                                         <!-- Title text -->
                                         <Viewbox Grid.Column="0" Grid.ColumnSpan="3" Margin="0">
                                             <StackPanel>
-                                                <TextBlock FontFamily="{StaticResource LatoBold}">
-                                                    <Run Text="W" Foreground="{StaticResource TitleOrangeBrush}" />
-                                                    <Run Text="O" Foreground="{StaticResource TitleBlueBrush}" />
-                                                    <Run Text="R" Foreground="{StaticResource TitleRedBrush}" />
-                                                    <Run Text="D" Foreground="{StaticResource TitleGreenBrush}" />
+                                                <TextBlock FontFamily="{StaticResource LatoBold}" Text="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Title}">
+                                                    <TextBlock.TextEffects>
+                                                        <TextEffect PositionStart="0" PositionCount="1" Foreground="{StaticResource TitleOrangeBrush}" />
+                                                        <TextEffect PositionStart="1" PositionCount="1" Foreground="{StaticResource TitleBlueBrush}" />
+                                                        <TextEffect PositionStart="2" PositionCount="1" Foreground="{StaticResource TitleRedBrush}" />
+                                                        <TextEffect PositionStart="3" PositionCount="1" Foreground="{StaticResource TitleGreenBrush}" />
+                                                    </TextBlock.TextEffects>
                                                 </TextBlock>
                                             </StackPanel>
                                         </Viewbox>
