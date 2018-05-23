@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Carmelo.Word.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="500" d:DesignWidth="500"
+      d:DesignHeight="700" d:DesignWidth="700"
       Title="LoginPage">
 
     <Border Background="{StaticResource TitleBlueBrush}">
@@ -21,13 +21,13 @@
                         <!-- Title and subtitle text -->
                         <StackPanel>
                             <TextBlock Text="Sign Up" FontSize="{StaticResource FontSizeLarge}" FontFamily="{StaticResource LatoRegular}" Foreground="{StaticResource TitleBlueBrush}" />
-                            <TextBlock Text="It's about to get fun" FontSize="{StaticResource FontSizeRegular}" />
-                            <TextBox />
-                            <TextBox />
-                            <Button Content="Next" HorizontalAlignment="Center" />
+                            <TextBlock Text="It's about to get fun" FontSize="{StaticResource FontSizeRegular}" Foreground="{StaticResource ForegroundFadedGrayBrush}" Margin="0 5 0 20" />
+                            <TextBox Tag="Email"/>
+                            <TextBox Tag="Password" Margin="0 0 0 30" />
+                            <Button Style="{StaticResource OrangeButton}" Content="Next" HorizontalAlignment="Center" />
                         </StackPanel>
                     </Border>
-                    <Button Content="I already have an account" HorizontalAlignment="Center" />
+                    <Button Style="{StaticResource TransparentButton}" Content="I already have an account" HorizontalAlignment="Center" />
                 </StackPanel>
             </ScrollViewer>
         </Grid>

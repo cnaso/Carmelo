@@ -13,7 +13,7 @@
         Icon="Images/Logo/Logo.png"
         MinWidth="{Binding WindowMinimumWidth}"
         MinHeight="{Binding WindowMinimumHeight}"
-        Title="WORD" Height="500" Width="800">
+        Title="WORD" Height="700" Width="1100">
 
     <Window.Resources>
         <Style TargetType="{x:Type local:MainWindow}">
