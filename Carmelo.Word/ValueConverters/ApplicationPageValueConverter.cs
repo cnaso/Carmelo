@@ -1,7 +1,6 @@
 ﻿using Carmelo.Word.DataModels;
 using Carmelo.Word.Pages;
 using System;
-using System.Diagnostics;
 using System.Globalization;
 
 namespace Carmelo.Word.ValueConverters
