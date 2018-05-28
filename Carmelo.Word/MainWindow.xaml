@@ -128,7 +128,13 @@
             GlassFrameThickness="0" />
     </WindowChrome.WindowChrome>
 
-    <Grid Background="{StaticResource ForegroundWhiteBrush}">
-        <Frame x:Name="MainFrame" Content="{Binding CurrentPage, Converter={converters:ApplicationPageValueConverter}}" />
-    </Grid>
+    <Border Background="{StaticResource TitleBlueBrush}">
+        <Grid>
+            <Grid.Background>
+                <ImageBrush TileMode="Tile" ViewportUnits="Absolute" Viewport="0 0 500 500" ImageSource="/Images/Background/emoji-background.png" />
+            </Grid.Background>
+
+            <Frame x:Name="MainFrame" Content="{Binding CurrentPage, Converter={converters:ApplicationPageValueConverter}}" Background="Transparent" />
+        </Grid>
+    </Border>
 </Window>
