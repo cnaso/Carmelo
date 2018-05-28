@@ -80,9 +80,20 @@
                         <TextBlock Text="{TemplateBinding Content}" FontFamily="{TemplateBinding FontFamily}" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
                     </Border>
                     <ControlTemplate.Triggers>
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Background" TargetName="border" Value="{StaticResource TitleBlueBrush}"/>
-                        </Trigger>
+                        <EventTrigger RoutedEvent="MouseEnter">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <ColorAnimation To="{StaticResource TitleBlue}" Duration="0:0:0.3" Storyboard.TargetName="border" Storyboard.TargetProperty="Background.Color" />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="MouseLeave">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <ColorAnimation To="{StaticResource TitleOrange}" Duration="0:0:0.3" Storyboard.TargetName="border" Storyboard.TargetProperty="Background.Color" />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
                         <Trigger Property="IsEnabled" Value="False">
                             <Setter Property="Background" TargetName="border" Value="{StaticResource ForegroundGray}"/>
                         </Trigger>
