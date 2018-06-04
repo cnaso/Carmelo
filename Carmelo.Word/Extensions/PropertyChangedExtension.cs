@@ -4,7 +4,7 @@ using System.ComponentModel;
 namespace Carmelo.Word.Extensions
 {
     /// <summary>
-    /// Extension safely invokes <see cref="PropertyChangedEventHandler"/>.
+    /// Convenience extensions for <see cref="PropertyChanged"/>.
     /// </summary>
     public static class PropertyChangedExtension
     {
