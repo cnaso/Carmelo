@@ -5,6 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:local="clr-namespace:Carmelo.Word.Pages"
       xmlns:viewmodels='clr-namespace:Carmelo.Word.ViewModels'
+      xmlns:properties="clr-namespace:Carmelo.Word.AttachedProperties"
       mc:Ignorable="d" 
       d:DesignHeight="700" d:DesignWidth="700"
       Title="LoginPage">
@@ -17,14 +18,14 @@
 
                         <!-- Title and subtitle text -->
                         <StackPanel>
-                            <TextBlock Text="Sign Up" FontSize="{StaticResource FontSizeLarge}" FontFamily="{StaticResource LatoRegular}" Foreground="{StaticResource TitleBlueBrush}" />
+                            <TextBlock Text="Sign In" FontSize="{StaticResource FontSizeLarge}" FontFamily="{StaticResource LatoRegular}" Foreground="{StaticResource TitleBlueBrush}" />
                             <TextBlock Text="It's about to get fun" FontSize="{StaticResource FontSizeRegular}" Foreground="{StaticResource ForegroundFadedGrayBrush}" Margin="0 5 0 20" />
                             <TextBox Tag="Email" Text="{Binding Email}" />
                             <PasswordBox x:Name="PasswordText" Tag="Password" Margin="0 0 0 30" />
-                            <Button Style="{StaticResource OrangeButton}" Command="{Binding LoginCommand}" CommandParameter="{Binding ElementName=Page}" Content="Next" HorizontalAlignment="Center" />
+                            <Button Style="{StaticResource OrangeButton}" Command="{Binding LoginCommand}" CommandParameter="{Binding ElementName=Page}" Content="Login" HorizontalAlignment="Center" />
                         </StackPanel>
                     </Border>
-                    <Button Style="{StaticResource TransparentButton}" Content="I already have an account" HorizontalAlignment="Center" />
+                    <Button Style="{StaticResource TransparentButton}" properties:IsBusyProperty.Value="{Binding LoginInProgress}" Content="I already have an account" HorizontalAlignment="Center" />
                 </StackPanel>
             </ScrollViewer>
         </Grid>
