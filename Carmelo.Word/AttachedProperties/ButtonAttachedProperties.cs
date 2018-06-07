@@ -9,6 +9,5 @@ namespace Carmelo.Word.AttachedProperties
     /// </summary>
     public class IsBusyProperty : BaseAttachedProperty<IsBusyProperty, bool>
     {
-        
     }
 }

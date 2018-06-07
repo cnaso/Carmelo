@@ -22,10 +22,10 @@
                             <TextBlock Text="It's about to get fun" FontSize="{StaticResource FontSizeRegular}" Foreground="{StaticResource ForegroundFadedGrayBrush}" Margin="0 5 0 20" />
                             <TextBox Tag="Email" Text="{Binding Email}" />
                             <PasswordBox x:Name="PasswordText" Tag="Password" Margin="0 0 0 30" />
-                            <Button Style="{StaticResource OrangeButton}" Command="{Binding LoginCommand}" CommandParameter="{Binding ElementName=Page}" Content="Login" HorizontalAlignment="Center" />
+                            <Button Style="{StaticResource OrangeButton}" properties:IsBusyProperty.Value="{Binding LoginInProgress}" Command="{Binding LoginCommand}" CommandParameter="{Binding ElementName=Page}" Content="Login" HorizontalAlignment="Center" />
                         </StackPanel>
                     </Border>
-                    <Button Style="{StaticResource TransparentButton}" properties:IsBusyProperty.Value="{Binding LoginInProgress}" Content="I already have an account" HorizontalAlignment="Center" />
+                    <Button Style="{StaticResource TransparentButton}" Content="I already have an account" HorizontalAlignment="Center" />
                 </StackPanel>
             </ScrollViewer>
         </Grid>
