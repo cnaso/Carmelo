@@ -12,7 +12,7 @@ namespace Carmelo.Word.ViewModels
     {
         public string Email { get; set; }
 
-        public bool LoginInProcess { get; set; }
+        public bool LoginInProgress { get; set; }
 
         public ICommand LoginCommand { get; set; }
 
@@ -28,8 +28,9 @@ namespace Carmelo.Word.ViewModels
         /// <returns></returns>
         public async Task Login(object parameter)
         {
-            await RunCommand(() => LoginInProcess, async () =>
+            await RunCommand(() => LoginInProgress, async () =>
             {
+                await Task.Delay(5000);
                 var hash = (parameter as ISecurePassword).Password.Hash();
             });
         }
