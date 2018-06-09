@@ -17,9 +17,9 @@ namespace Carmelo.Word.ViewModels
 
         public int TitleHeight { get; set; } = 30;
 
-        public double WindowMinimumWidth { get; set; } = 400;
+        public double WindowMinimumWidth { get; set; } = 800;
 
-        public double WindowMinimumHeight { get; set; } = 400;
+        public double WindowMinimumHeight { get; set; } = 500;
 
         public bool Borderless { get { return (window.WindowState == WindowState.Maximized || dockPosition != WindowDockPosition.Undocked); } }
 
@@ -59,7 +59,7 @@ namespace Carmelo.Word.ViewModels
 
         public GridLength TitleHeightGridLength { get { return new GridLength(TitleHeight + BorderSize); } }
 
-        public ApplicationPage CurrentPage { get; set; } = ApplicationPage.Login;
+        public ApplicationPage CurrentPage { get; set; } = ApplicationPage.Chat;
 
         #endregion
 
