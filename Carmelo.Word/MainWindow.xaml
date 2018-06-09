@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Carmelo.Word"
         xmlns:converters='clr-namespace:Carmelo.Word.ValueConverters'
+        xmlns:fa="http://schemas.fontawesome.io/icons/"
         mc:Ignorable="d"
         WindowStyle="None"
         AllowsTransparency="True"
@@ -130,11 +131,48 @@
 
     <Border Background="{StaticResource TitleBlueBrush}">
         <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="5*" />
+            </Grid.ColumnDefinitions>
             <Grid.Background>
                 <ImageBrush TileMode="Tile" ViewportUnits="Absolute" Viewport="0 0 500 500" ImageSource="/Images/Background/emoji-background.png" />
             </Grid.Background>
 
-            <Frame x:Name="MainFrame" Content="{Binding CurrentPage, Converter={converters:ApplicationPageValueConverter}}" Background="Transparent" />
+            <!-- Side list -->
+            <Border Grid.Column="0" x:Name="SideList" Background="{StaticResource ForegroundWhiteBrush}">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+
+                    <!-- Top menu -->
+                    <Grid Background="{StaticResource TitleBlueBrush}" Height="50">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        
+                        <!-- Menu buttons -->
+                        <StackPanel Grid.Column="0" Orientation="Horizontal">
+                            <Button Style="{StaticResource IconButton}" Content="{StaticResource ChatIcon}" />
+                            <Button Style="{StaticResource IconButton}" Content="{StaticResource UserIcon}" />
+                            <Button Style="{StaticResource IconButton}" Content="{StaticResource ImageIcon}" />
+                        </StackPanel>
+                        
+                        <!-- Settings button -->
+                        <Button Grid.Column="2" Style="{StaticResource IconButton}" Foreground="{StaticResource DarkBlueBrush}" Content="{StaticResource SettingsIcon}" />
+                    </Grid>
+                </Grid>
+                
+                
+
+            </Border>
+
+            <!-- Main page -->
+            <Frame Grid.Column="1" x:Name="MainFrame" Content="{Binding CurrentPage, Converter={converters:ApplicationPageValueConverter}}" Background="Transparent" />
         </Grid>
     </Border>
 </Window>
