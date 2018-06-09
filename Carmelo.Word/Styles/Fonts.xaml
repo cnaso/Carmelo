@@ -6,6 +6,7 @@
     <FontFamily x:Key="LatoHairline">pack://application:,,,/Fonts/#Lato Hairline</FontFamily>
     <FontFamily x:Key="LatoLight">pack://application:,,,/Fonts/#Lato Light</FontFamily>
     <FontFamily x:Key="LatoBold">pack://application:,,,/Fonts/#Lato Bold</FontFamily>
+    <FontFamily x:Key="FontAwesome">pack://application:,,,/FontAwesome.WPF;component/#FontAwesome</FontFamily>
 
     <Style TargetType="{x:Type Control}" x:Key="BaseStyle">
         <Setter Property="FontFamily" Value="{StaticResource LatoHairline}" />
@@ -24,4 +25,10 @@
     <system:Double x:Key="FontSizeRegular">20</system:Double>
     <system:Double x:Key="FontSizeSmall">14</system:Double>
     <system:Double x:Key="FontSizeLarge">30</system:Double>
+
+    <!-- FontAwesome unicode -->
+    <system:String x:Key="ChatIcon">&#xf086;</system:String>
+    <system:String x:Key="UserIcon">&#xf007;</system:String>
+    <system:String x:Key="ImageIcon">&#xf1c5;</system:String>
+    <system:String x:Key="SettingsIcon">&#xf013;</system:String>
 </ResourceDictionary>
