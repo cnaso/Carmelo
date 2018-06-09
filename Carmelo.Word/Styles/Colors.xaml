@@ -22,6 +22,12 @@
     <Color x:Key="TitleBlue">#3099c5</Color>
     <SolidColorBrush x:Key="TitleBlueBrush" Color="{StaticResource TitleBlue}" />
 
+    <Color x:Key="LightBlue">#45b6e5</Color>
+    <SolidColorBrush x:Key="LightBlueBrush" Color="{StaticResource LightBlue}" />
+
+    <Color x:Key="DarkBlue">#0c6991</Color>
+    <SolidColorBrush x:Key="DarkBlueBrush" Color="{StaticResource DarkBlue}" />
+
     <Color x:Key="TitleOrange">#ffa800</Color>
     <SolidColorBrush x:Key="TitleOrangeBrush" Color="{StaticResource TitleOrange}" />
 
