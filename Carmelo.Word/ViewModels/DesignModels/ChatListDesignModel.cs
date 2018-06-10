@@ -20,7 +20,8 @@ namespace Carmelo.Word.ViewModels.DesignModels
                     Initials = "JD",
                     Name = "John Doe",
                     Message = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                    ProfilePictureRGB = "888888"
+                    ProfilePictureRGB = "888888",
+                    NewContentAvailable = true
                 },
                 new ChatListItemViewModel
                 {
@@ -34,8 +35,9 @@ namespace Carmelo.Word.ViewModels.DesignModels
                     Initials = "PL",
                     Name = "Parnell Lovetz",
                     Message = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                    ProfilePictureRGB = "3099c5"
-                },
+                    ProfilePictureRGB = "3099c5",
+                    IsSelected = true
+                }
             };
         }
     }
