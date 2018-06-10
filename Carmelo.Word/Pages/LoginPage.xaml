@@ -1,31 +1,53 @@
-﻿<local:BasePage x:Name="Page" x:TypeArguments="viewmodels:LoginViewModel" x:Class="Carmelo.Word.Pages.LoginPage"
+﻿<local:BasePage x:Name="Login" x:TypeArguments="viewmodels:LoginViewModel" x:Class="Carmelo.Word.Pages.LoginPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:local="clr-namespace:Carmelo.Word.Pages"
-      xmlns:viewmodels='clr-namespace:Carmelo.Word.ViewModels'
+      xmlns:viewmodels="clr-namespace:Carmelo.Word.ViewModels"
       xmlns:properties="clr-namespace:Carmelo.Word.AttachedProperties"
       mc:Ignorable="d" 
       d:DesignHeight="700" d:DesignWidth="700"
-      Title="LoginPage">
+      Title="Login Page">
 
     <Border Background="Transparent">
         <Grid>
             <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
                 <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" TextBlock.TextAlignment="Center">
-                    <Border Background="{StaticResource ForegroundWhiteBrush}" CornerRadius="10" Padding="15 50 15 15" Width="400" Margin="50 50 50 0">
+                    <Border Background="{StaticResource ForegroundWhiteBrush}" 
+                            CornerRadius="10" 
+                            Padding="15 50 15 15" 
+                            Width="400" 
+                            Margin="50 50 50 0">
 
                         <!-- Title and subtitle text -->
                         <StackPanel>
-                            <TextBlock Text="Sign In" FontSize="{StaticResource FontSizeLarge}" FontFamily="{StaticResource LatoRegular}" Foreground="{StaticResource TitleBlueBrush}" />
-                            <TextBlock Text="It's about to get fun" FontSize="{StaticResource FontSizeRegular}" Foreground="{StaticResource ForegroundFadedGrayBrush}" Margin="0 5 0 20" />
+                            <TextBlock Text="Sign In" 
+                                       FontSize="{StaticResource FontSizeLarge}" 
+                                       FontFamily="{StaticResource LatoRegular}" 
+                                       Foreground="{StaticResource BlueBrush}" />
+                            <TextBlock Text="It's about to get fun" 
+                                       FontSize="{StaticResource FontSizeRegular}" 
+                                       Foreground="{StaticResource ForegroundFadedGrayBrush}" 
+                                       Margin="0 5 0 20" />
+                            
+                            <!-- Email and password -->
                             <TextBox Tag="Email" Text="{Binding Email}" />
                             <PasswordBox x:Name="PasswordText" Tag="Password" Margin="0 0 0 30" />
-                            <Button Style="{StaticResource OrangeButton}" properties:IsBusyProperty.Value="{Binding LoginInProgress}" Command="{Binding LoginCommand}" CommandParameter="{Binding ElementName=Page}" Content="Login" HorizontalAlignment="Center" />
+                            
+                            <!-- Login -->
+                            <Button Style="{StaticResource OrangeButton}" 
+                                    properties:IsBusyProperty.Value="{Binding LoginInProgress}" 
+                                    Command="{Binding LoginCommand}" 
+                                    CommandParameter="{Binding ElementName=Login}" 
+                                    Content="Login" HorizontalAlignment="Center" />
                         </StackPanel>
                     </Border>
-                    <Button Style="{StaticResource TransparentButton}" Content="I already have an account" HorizontalAlignment="Center" />
+                    
+                    <!-- Have account -->
+                    <Button Style="{StaticResource TransparentButton}" 
+                            Content="I already have an account" 
+                            HorizontalAlignment="Center" />
                 </StackPanel>
             </ScrollViewer>
         </Grid>
