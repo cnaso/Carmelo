@@ -14,5 +14,9 @@ namespace Carmelo.Word.ViewModels
         public string Initials { get; set; }
 
         public string ProfilePictureRGB { get; set; }
+
+        public bool NewContentAvailable { get; set; }
+
+        public bool IsSelected { get; set; }
     }
 }
