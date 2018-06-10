@@ -1,4 +1,4 @@
-# Carmelo
+# Carmelo.Word
 
 WPF Chat application following tutorials from AngelSix.
 
