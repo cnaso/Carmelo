@@ -22,17 +22,17 @@
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type Window}">
                         <!-- Outer border / drop shadow margin -->
-                        <Border Padding="{Binding OuterMarginThickness, FallbackValue=10}">
+                        <Border Padding="{Binding OuterMarginThickness}">
 
                             <!-- Main window -->
                             <Grid>
                                 <!-- Opacity mask for corners on grid -->
                                 <Border x:Name="Container" 
-                                        CornerRadius="{Binding WindowCornerRadius, FallbackValue=10}" 
+                                        CornerRadius="{Binding WindowCornerRadius}" 
                                         Background="{StaticResource ForegroundWhiteBrush}" />
 
                                 <!-- Window border / drop shadow -->
-                                <Border CornerRadius="{Binding WindowCornerRadius, FallbackValue=10}" 
+                                <Border CornerRadius="{Binding WindowCornerRadius}" 
                                         Background="{StaticResource ForegroundWhiteBrush}">
                                     <Border.Effect>
                                         <DropShadowEffect ShadowDepth="2" Opacity="0.2" />
@@ -168,7 +168,7 @@
 
             <!-- Side list -->
             <controls:SideListControl Grid.Column="0">
-                <controls:ChatListItemControl Height="60" VerticalAlignment="Top" />
+                <controls:ChatListControl VerticalAlignment="Top" />
             </controls:SideListControl>
 
             <!-- Main page -->
