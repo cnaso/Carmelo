@@ -15,39 +15,48 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type ContentControl}">
-                        <Grid x:Name="Container" Background="{StaticResource ForegroundWhiteBrush}">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="Auto" />
-                                <ColumnDefinition Width="Auto" />
-                                <ColumnDefinition Width="*" />
-                            </Grid.ColumnDefinitions>
+                        <Border x:Name="Background" Background="{StaticResource ForegroundWhiteBrush}">
+                            <Grid x:Name="Container" Background="Transparent">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
 
-                            <Border Grid.Column="0" Background="Red" Width="5" />
+                                <!-- New message indicator -->
+                                <Border Grid.Column="0" 
+                                    Background="Red" 
+                                    Width="4" 
+                                    HorizontalAlignment="Left"
+                                    Visibility="{Binding NewContentAvailable, Converter={converters:InverseBooleanToVisibilityValueConverter}, ConverterParameter=True}" />
 
-                            <Border Grid.Column="1" Padding="8">
-                                <Border Background="{Binding ProfilePictureRGB, Converter={converters:StringToBrushValueConverter}}" 
+                                <!-- User initials icon -->
+                                <Border Grid.Column="0" Padding="8">
+                                    <Border Background="{Binding ProfilePictureRGB, Converter={converters:StringToBrushValueConverter}}" 
                                         Width="{Binding ActualHeight, RelativeSource={RelativeSource Self}}"
                                         CornerRadius="{Binding ActualHeight, RelativeSource={RelativeSource Self}}">
-                                    <TextBlock Text="{Binding Initials}"
+                                        <TextBlock Text="{Binding Initials}"
                                                VerticalAlignment="Center"
                                                HorizontalAlignment="Center"
                                                Foreground="{StaticResource ForegroundWhiteBrush}"
                                                FontSize="{StaticResource FontSizeMedium}"
                                                FontFamily="{StaticResource LatoLight}" />
+                                    </Border>
                                 </Border>
-                            </Border>
 
-                            <Border Grid.Column="2" Padding="0 0 8 0">
-                                <StackPanel VerticalAlignment="Center">
-                                    <TextBlock Text="{Binding Name}" 
+                                <!-- User name and message -->
+                                <Border Grid.Column="1" Padding="0 0 8 0">
+                                    <StackPanel VerticalAlignment="Center">
+                                        <TextBlock Text="{Binding Name}" 
                                                FontFamily="{StaticResource LatoRegular}" 
                                                Foreground="{StaticResource BlueBrush}" 
                                                TextTrimming="CharacterEllipsis" />
-                                    <TextBlock Text="{Binding Message}" 
-                                               TextTrimming="CharacterEllipsis" />
-                                </StackPanel>
-                            </Border>
-                        </Grid>
+                                        <TextBlock Text="{Binding Message}" 
+                                                   Foreground="{StaticResource ForegroundFadedGrayBrush}"
+                                                   TextTrimming="CharacterEllipsis" />
+                                    </StackPanel>
+                                </Border>
+                            </Grid>
+                        </Border>
                         
                         <!-- Hover effect -->
                         <ControlTemplate.Triggers>
@@ -64,7 +73,7 @@
                             <EventTrigger RoutedEvent="MouseLeave">
                                 <BeginStoryboard>
                                     <Storyboard>
-                                        <ColorAnimation To="{StaticResource ForegroundWhite}" 
+                                        <ColorAnimation To="Transparent" 
                                                         Duration="0:0:0.3" 
                                                         Storyboard.TargetName="Container" 
                                                         Storyboard.TargetProperty="Background.Color" />
@@ -74,8 +83,13 @@
                             <Trigger Property="IsEnabled" Value="False">
                                 <Setter Property="Background" 
                                         TargetName="Container" 
-                                        Value="{StaticResource ForegroundGray}"/>
+                                        Value="{StaticResource ForegroundGrayBrush}" />
                             </Trigger>
+                            <DataTrigger Binding="{Binding IsSelected}" Value="True">
+                                <Setter Property="Background" 
+                                        TargetName="Background" 
+                                        Value="{StaticResource FadedBlueBrush}" />
+                            </DataTrigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
                 </Setter.Value>
