@@ -4,14 +4,14 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Carmelo.Word"
-        xmlns:converters='clr-namespace:Carmelo.Word.ValueConverters'
-        xmlns:fa="http://schemas.fontawesome.io/icons/"
+        xmlns:controls="clr-namespace:Carmelo.Word.Controls"
+        xmlns:converters="clr-namespace:Carmelo.Word.ValueConverters"
+        xmlns:fa="clr-namespace:FontAwesome.WPF;assembly=FontAwesome.WPF"
         mc:Ignorable="d"
         WindowStyle="None"
         AllowsTransparency="True"
         WindowStartupLocation="CenterScreen"
         Name="AppWindow"
-        Icon="Images/Logo/Logo.png"
         MinWidth="{Binding WindowMinimumWidth}"
         MinHeight="{Binding WindowMinimumHeight}"
         Title="WORD" Height="700" Width="1100">
@@ -27,10 +27,13 @@
                             <!-- Main window -->
                             <Grid>
                                 <!-- Opacity mask for corners on grid -->
-                                <Border x:Name="Container" CornerRadius="{Binding WindowCornerRadius, FallbackValue=10}" Background="{StaticResource ForegroundWhiteBrush}" />
+                                <Border x:Name="Container" 
+                                        CornerRadius="{Binding WindowCornerRadius, FallbackValue=10}" 
+                                        Background="{StaticResource ForegroundWhiteBrush}" />
 
                                 <!-- Window border / drop shadow -->
-                                <Border CornerRadius="{Binding WindowCornerRadius, FallbackValue=10}" Background="{StaticResource ForegroundWhiteBrush}">
+                                <Border CornerRadius="{Binding WindowCornerRadius, FallbackValue=10}" 
+                                        Background="{StaticResource ForegroundWhiteBrush}">
                                     <Border.Effect>
                                         <DropShadowEffect ShadowDepth="2" Opacity="0.2" />
                                     </Border.Effect>
@@ -64,19 +67,31 @@
                                         </Grid.ColumnDefinitions>
 
                                         <!-- Menu button -->
-                                        <Button x:Name="MenuButton" Grid.Column="0" Style="{StaticResource SystemIconButton}" Command="{Binding MenuCommand}">
-                                            <Image Source="/Images/Logo/Logo.png" />
+                                        <Button x:Name="MenuButton" 
+                                                Grid.Column="0" 
+                                                Style="{StaticResource SystemIconButton}" 
+                                                Command="{Binding MenuCommand}">
+                                            <fa:ImageAwesome Icon="UserPlus" Foreground="{StaticResource ForegroundGrayBrush}" />
                                         </Button>
 
                                         <!-- Title text -->
                                         <Viewbox Grid.Column="0" Grid.ColumnSpan="3" Margin="0">
                                             <StackPanel>
-                                                <TextBlock FontFamily="{StaticResource LatoBold}" Text="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Title}">
+                                                <TextBlock FontFamily="{StaticResource LatoBold}" 
+                                                           Text="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Title}">
                                                     <TextBlock.TextEffects>
-                                                        <TextEffect PositionStart="0" PositionCount="1" Foreground="{StaticResource TitleOrangeBrush}" />
-                                                        <TextEffect PositionStart="1" PositionCount="1" Foreground="{StaticResource TitleBlueBrush}" />
-                                                        <TextEffect PositionStart="2" PositionCount="1" Foreground="{StaticResource TitleRedBrush}" />
-                                                        <TextEffect PositionStart="3" PositionCount="1" Foreground="{StaticResource TitleGreenBrush}" />
+                                                        <TextEffect PositionStart="0" 
+                                                                    PositionCount="1" 
+                                                                    Foreground="{StaticResource OrangeBrush}" />
+                                                        <TextEffect PositionStart="1" 
+                                                                    PositionCount="1" 
+                                                                    Foreground="{StaticResource BlueBrush}" />
+                                                        <TextEffect PositionStart="2" 
+                                                                    PositionCount="1" 
+                                                                    Foreground="{StaticResource RedBrush}" />
+                                                        <TextEffect PositionStart="3" 
+                                                                    PositionCount="1" 
+                                                                    Foreground="{StaticResource GreenBrush}" />
                                                     </TextBlock.TextEffects>
                                                 </TextBlock>
                                             </StackPanel>
@@ -84,9 +99,16 @@
 
                                         <!-- Window buttons -->
                                         <StackPanel Grid.Column="2" Orientation="Horizontal">
-                                            <Button x:Name="Minimize" Style="{StaticResource WindowControlButton}" Command="{Binding MinimizeCommand}" Content="_" />
-                                            <Button x:Name="Maximize" Style="{StaticResource WindowControlButton}" Command="{Binding MaximizeCommand}" Content="[ ]" />
-                                            <Button x:Name="Close" Style="{StaticResource CloseButton}" Command="{Binding CloseCommand}" Content="X" />
+                                            <Button x:Name="Minimize" Style="{StaticResource WindowControlButton}" 
+                                                    Command="{Binding MinimizeCommand}" 
+                                                    Content="_" />
+                                            <Button x:Name="Maximize" Style="{StaticResource WindowControlButton}" 
+                                                    Command="{Binding MaximizeCommand}" 
+                                                    Content="[ ]" />
+                                            <Button x:Name="Close" 
+                                                    Style="{StaticResource CloseButton}" 
+                                                    Command="{Binding CloseCommand}" 
+                                                    Content="X" />
                                         </StackPanel>
                                     </Grid>
                                     
@@ -103,8 +125,10 @@
                                         <!-- Drop shadow -->
                                         <Border.Background>
                                             <LinearGradientBrush StartPoint="0, 0" EndPoint="0, 1">
-                                                <GradientStop Color="{StaticResource BackgroundLightGray}" Offset="0.0" />
-                                                <GradientStop Color="{StaticResource ForegroundWhite}" Offset="1.0" />
+                                                <GradientStop Color="{StaticResource BackgroundLightGray}" 
+                                                              Offset="0.0" />
+                                                <GradientStop Color="{StaticResource ForegroundWhite}" 
+                                                              Offset="1.0" />
                                             </LinearGradientBrush>
                                         </Border.Background>
                                     </Border>
@@ -129,50 +153,29 @@
             GlassFrameThickness="0" />
     </WindowChrome.WindowChrome>
 
-    <Border Background="{StaticResource TitleBlueBrush}">
+    <Border Background="{StaticResource BlueBrush}">
         <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="2*" />
-                <ColumnDefinition Width="5*" />
+                <ColumnDefinition Width="300" />
+                <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
             <Grid.Background>
-                <ImageBrush TileMode="Tile" ViewportUnits="Absolute" Viewport="0 0 500 500" ImageSource="/Images/Background/emoji-background.png" />
+                <ImageBrush TileMode="Tile" 
+                            ViewportUnits="Absolute" 
+                            Viewport="0 0 500 500" 
+                            ImageSource="/Images/Background/emoji-background.png" />
             </Grid.Background>
 
             <!-- Side list -->
-            <Border Grid.Column="0" x:Name="SideList" Background="{StaticResource ForegroundWhiteBrush}">
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="*" />
-                    </Grid.RowDefinitions>
-
-                    <!-- Top menu -->
-                    <Grid Background="{StaticResource TitleBlueBrush}" Height="50">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto" />
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="Auto" />
-                        </Grid.ColumnDefinitions>
-                        
-                        <!-- Menu buttons -->
-                        <StackPanel Grid.Column="0" Orientation="Horizontal">
-                            <Button Style="{StaticResource IconButton}" Content="{StaticResource ChatIcon}" />
-                            <Button Style="{StaticResource IconButton}" Content="{StaticResource UserIcon}" />
-                            <Button Style="{StaticResource IconButton}" Content="{StaticResource ImageIcon}" />
-                        </StackPanel>
-                        
-                        <!-- Settings button -->
-                        <Button Grid.Column="2" Style="{StaticResource IconButton}" Foreground="{StaticResource DarkBlueBrush}" Content="{StaticResource SettingsIcon}" />
-                    </Grid>
-                </Grid>
-                
-                
-
-            </Border>
+            <controls:SideListControl Grid.Column="0">
+                <controls:ChatListItemControl Height="60" VerticalAlignment="Top" />
+            </controls:SideListControl>
 
             <!-- Main page -->
-            <Frame Grid.Column="1" x:Name="MainFrame" Content="{Binding CurrentPage, Converter={converters:ApplicationPageValueConverter}}" Background="Transparent" />
+            <Frame Grid.Column="1" 
+                   x:Name="MainFrame" 
+                   Content="{Binding CurrentPage, Converter={converters:ApplicationPageValueConverter}}" 
+                   Background="Transparent" />
         </Grid>
     </Border>
 </Window>

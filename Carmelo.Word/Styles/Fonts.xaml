@@ -23,6 +23,7 @@
     <Style TargetType="{x:Type ListView}" BasedOn="{StaticResource BaseStyle}" />
 
     <system:Double x:Key="FontSizeRegular">20</system:Double>
+    <system:Double x:Key="FontSizeMedium">18</system:Double>
     <system:Double x:Key="FontSizeSmall">14</system:Double>
     <system:Double x:Key="FontSizeLarge">30</system:Double>
 
@@ -31,4 +32,5 @@
     <system:String x:Key="UserIcon">&#xf007;</system:String>
     <system:String x:Key="ImageIcon">&#xf1c5;</system:String>
     <system:String x:Key="SettingsIcon">&#xf013;</system:String>
+    <system:String x:Key="MainIcon">&#xf391;</system:String>
 </ResourceDictionary>

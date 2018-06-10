@@ -12,7 +12,7 @@
     </Style>
 
     <Style TargetType="{x:Type TextBox}" BasedOn="{StaticResource BaseStyle}">
-        <Setter Property="BorderBrush" Value="{StaticResource TitleBlueBrush}" />
+        <Setter Property="BorderBrush" Value="{StaticResource BlueBrush}" />
         <Setter Property="FontFamily" Value="{StaticResource LatoRegular}" />
         <Setter Property="FontSize" Value="{StaticResource FontSizeLarge}" />
         <Setter Property="Padding" Value="10" />
@@ -62,7 +62,7 @@
     </Style>
 
     <Style TargetType="{x:Type PasswordBox}" BasedOn="{StaticResource BaseStyle}">
-        <Setter Property="BorderBrush" Value="{StaticResource TitleBlueBrush}" />
+        <Setter Property="BorderBrush" Value="{StaticResource BlueBrush}" />
         <Setter Property="FontFamily" Value="{StaticResource LatoRegular}" />
         <Setter Property="FontSize" Value="{StaticResource FontSizeLarge}" />
         <Setter Property="Padding" Value="10" />
