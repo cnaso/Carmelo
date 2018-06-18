@@ -1,4 +1,4 @@
-﻿using Carmelo.Word.ViewModels;
+﻿using Carmelo.Word.Core.ViewModels;
 
 namespace Carmelo.Word.Pages
 {

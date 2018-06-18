@@ -1,5 +1,6 @@
-﻿using System.Security;
-using Carmelo.Word.ViewModels;
+﻿using Carmelo.Word.Core.ViewModels;
+using Carmelo.Word.Core.ViewModels.Base;
+using System.Security;
 
 namespace Carmelo.Word.Pages
 {

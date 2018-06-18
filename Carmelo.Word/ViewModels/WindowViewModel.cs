@@ -1,5 +1,6 @@
-﻿using Carmelo.Base.ViewModels;
-using Carmelo.Word.DataModels;
+﻿using Carmelo.Word.Core.Commands;
+using Carmelo.Word.Core.DataModels;
+using Carmelo.Word.Core.ViewModels.Base;
 using Carmelo.Word.Windows;
 using System.Windows;
 using System.Windows.Input;

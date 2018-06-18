@@ -1,4 +1,4 @@
-﻿using Carmelo.Word.DataModels;
+﻿using Carmelo.Word.Core.DataModels;
 using Carmelo.Word.Pages;
 using System;
 using System.Globalization;

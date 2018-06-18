@@ -8,7 +8,7 @@
              d:DesignHeight="300" d:DesignWidth="300">
     <UserControl.Template>
         <ControlTemplate TargetType="UserControl">
-            <Border Grid.Column="0" x:Name="SideList" Background="{StaticResource ForegroundWhiteBrush}">
+            <Border Grid.Column="0" x:Name="SideList" Background="{StaticResource Color.WhiteBrush}">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto" />
@@ -16,7 +16,7 @@
                     </Grid.RowDefinitions>
 
                     <!-- Top menu -->
-                    <Grid Grid.Row="0" Background="{StaticResource BlueBrush}" Height="50">
+                    <Grid Grid.Row="0" Background="{StaticResource Color.BlueBrush}" Height="50">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="Auto" />
                             <ColumnDefinition Width="*" />
@@ -25,16 +25,16 @@
 
                         <!-- Menu buttons -->
                         <StackPanel Grid.Column="0" Orientation="Horizontal">
-                            <Button Style="{StaticResource IconButton}" Content="{StaticResource ChatIcon}" />
-                            <Button Style="{StaticResource IconButton}" Content="{StaticResource UserIcon}" />
-                            <Button Style="{StaticResource IconButton}" Content="{StaticResource ImageIcon}" />
+                            <Button Style="{StaticResource Button.Icon}" Content="{StaticResource FontAwesome.ChatIcon}" />
+                            <Button Style="{StaticResource Button.Icon}" Content="{StaticResource FontAwesome.UserIcon}" />
+                            <Button Style="{StaticResource Button.Icon}" Content="{StaticResource FontAwesome.ImageIcon}" />
                         </StackPanel>
 
                         <!-- Settings button -->
                         <Button Grid.Column="2" 
-                                Style="{StaticResource IconButton}" 
-                                Foreground="{StaticResource DarkBlueBrush}" 
-                                Content="{StaticResource SettingsIcon}" />
+                                Style="{StaticResource Button.Icon}" 
+                                Foreground="{StaticResource Color.DarkBlueBrush}" 
+                                Content="{StaticResource FontAwesome.SettingsIcon}" />
                     </Grid>
                     <ContentPresenter Grid.Row="1" />
                 </Grid>

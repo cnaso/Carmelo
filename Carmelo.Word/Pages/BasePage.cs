@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows;
-using Carmelo.Base.ViewModels;
+using Carmelo.Word.Core.ViewModels.Base;
 
 namespace Carmelo.Word.Pages
 {

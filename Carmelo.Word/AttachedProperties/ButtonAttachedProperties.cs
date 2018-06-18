@@ -1,7 +1,4 @@
-﻿using System.Windows;
-using System.Windows.Controls;
-
-namespace Carmelo.Word.AttachedProperties
+﻿namespace Carmelo.Word.AttachedProperties
 {
     /// <summary>
     /// IsBusy attached property for the <see cref="Button"/> control.

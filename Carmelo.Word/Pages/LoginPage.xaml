@@ -1,10 +1,10 @@
-﻿<local:BasePage x:Name="Login" x:TypeArguments="viewmodels:LoginViewModel" x:Class="Carmelo.Word.Pages.LoginPage"
+﻿<local:BasePage x:Name="Login" x:TypeArguments="core:LoginViewModel" x:Class="Carmelo.Word.Pages.LoginPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:local="clr-namespace:Carmelo.Word.Pages"
-      xmlns:viewmodels="clr-namespace:Carmelo.Word.ViewModels"
+      xmlns:core="http://schemas.carmelo.com/cw/"
       xmlns:properties="clr-namespace:Carmelo.Word.AttachedProperties"
       mc:Ignorable="d" 
       d:DesignHeight="700" d:DesignWidth="700"
@@ -14,7 +14,7 @@
         <Grid>
             <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
                 <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" TextBlock.TextAlignment="Center">
-                    <Border Background="{StaticResource ForegroundWhiteBrush}" 
+                    <Border Background="{StaticResource Color.WhiteBrush}" 
                             CornerRadius="10" 
                             Padding="15 50 15 15" 
                             Width="400" 
@@ -23,12 +23,12 @@
                         <!-- Title and subtitle text -->
                         <StackPanel>
                             <TextBlock Text="Sign In" 
-                                       FontSize="{StaticResource FontSizeLarge}" 
-                                       FontFamily="{StaticResource LatoRegular}" 
-                                       Foreground="{StaticResource BlueBrush}" />
+                                       FontSize="{StaticResource FontSize.Large}" 
+                                       FontFamily="{StaticResource Lato.Regular}" 
+                                       Foreground="{StaticResource Color.BlueBrush}" />
                             <TextBlock Text="It's about to get fun" 
-                                       FontSize="{StaticResource FontSizeRegular}" 
-                                       Foreground="{StaticResource ForegroundFadedGrayBrush}" 
+                                       FontSize="{StaticResource FontSize.Regular}" 
+                                       Foreground="{StaticResource Color.FadedDarkGrayBrush}" 
                                        Margin="0 5 0 20" />
                             
                             <!-- Email and password -->
@@ -36,7 +36,7 @@
                             <PasswordBox x:Name="PasswordText" Tag="Password" Margin="0 0 0 30" />
                             
                             <!-- Login -->
-                            <Button Style="{StaticResource OrangeButton}" 
+                            <Button Style="{StaticResource Button.Orange}" 
                                     properties:IsBusyProperty.Value="{Binding LoginInProgress}" 
                                     Command="{Binding LoginCommand}" 
                                     CommandParameter="{Binding ElementName=Login}" 
@@ -45,7 +45,7 @@
                     </Border>
                     
                     <!-- Have account -->
-                    <Button Style="{StaticResource TransparentButton}" 
+                    <Button Style="{StaticResource Button.Transparent}" 
                             Content="I already have an account" 
                             HorizontalAlignment="Center" />
                 </StackPanel>
