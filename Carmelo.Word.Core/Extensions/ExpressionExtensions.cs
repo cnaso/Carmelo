@@ -2,7 +2,7 @@
 using System.Linq.Expressions;
 using System.Reflection;
 
-namespace Carmelo.Word.Extensions
+namespace Carmelo.Word.Core.Extensions
 {
     /// <summary>
     /// Convenience extensions for <see cref="Expression"/>.

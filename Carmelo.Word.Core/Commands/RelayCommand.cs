@@ -1,18 +1,18 @@
 ﻿using System;
 using System.Windows.Input;
 
-namespace Carmelo.Base.ViewModels
+namespace Carmelo.Word.Core.Commands
 {
     /// <summary>
-    /// Class handles firing parameterized commands implemented from the <see cref="ICommand"/> interface.
+    /// Class handles firing commands implemented from the <see cref="ICommand"/> interface.
     /// </summary>
-    public class RelayParameterizedCommand : ICommand
+    public class RelayCommand : ICommand
     {
         public event EventHandler CanExecuteChanged;
 
-        private Action<object> action;
+        private Action action;
 
-        public RelayParameterizedCommand(Action<object> action)
+        public RelayCommand(Action action)
         {
             this.action = action;
         }
@@ -24,7 +24,7 @@ namespace Carmelo.Base.ViewModels
 
         public void Execute(object parameter)
         {
-            action(parameter);
+            action();
         }
     }
 }

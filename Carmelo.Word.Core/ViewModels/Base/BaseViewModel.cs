@@ -1,10 +1,10 @@
 ﻿using System.ComponentModel;
-using Carmelo.Word.Extensions;
 using System.Linq.Expressions;
 using System;
 using System.Threading.Tasks;
+using Carmelo.Word.Core.Extensions;
 
-namespace Carmelo.Base.ViewModels
+namespace Carmelo.Word.Core.ViewModels.Base
 {
     /// <summary>
     /// Base class for View Models that handles <see cref="PropertyChanged"/> events.

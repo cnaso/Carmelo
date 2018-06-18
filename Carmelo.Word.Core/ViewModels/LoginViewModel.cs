@@ -1,9 +1,10 @@
-﻿using Carmelo.Base.ViewModels;
-using System.Windows.Input;
+﻿using System.Windows.Input;
 using System.Threading.Tasks;
-using Carmelo.Word.Extensions;
+using Carmelo.Word.Core.ViewModels.Base;
+using Carmelo.Word.Core.Commands;
+using Carmelo.Word.Core.Extensions;
 
-namespace Carmelo.Word.ViewModels
+namespace Carmelo.Word.Core.ViewModels
 {
     /// <summary>
     /// View Model to handle the <see cref="LoginPage"/>.

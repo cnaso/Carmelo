@@ -1,9 +1,9 @@
-﻿namespace Carmelo.Word.ViewModels.DesignModels
+﻿namespace Carmelo.Word.Core.ViewModels.Chat.Design
 {
     /// <summary>
     /// Design Model for the <see cref="ChatListItemViewModel"/>.
     /// </summary>
-    class ChatListItemDesignModel : ChatListItemViewModel
+    public class ChatListItemDesignModel : ChatListItemViewModel
     {
         public static ChatListItemDesignModel Instance { get { return instance; } }
 

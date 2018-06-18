@@ -1,7 +1,7 @@
-﻿using Carmelo.Base.ViewModels;
+﻿using Carmelo.Word.Core.ViewModels.Base;
 using System.Collections.Generic;
 
-namespace Carmelo.Word.ViewModels
+namespace Carmelo.Word.Core.ViewModels.Chat
 {
     /// <summary>
     /// View Model for the <see cref="ChatListControl"/> user control.

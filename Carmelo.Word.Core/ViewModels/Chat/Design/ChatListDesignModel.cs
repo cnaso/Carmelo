@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
 
-namespace Carmelo.Word.ViewModels.DesignModels
+namespace Carmelo.Word.Core.ViewModels.Chat.Design
 {
     /// <summary>
     /// Design Model for the <see cref="ChatListViewModel"/>.
     /// </summary>
-    class ChatListDesignModel : ChatListViewModel
+    public class ChatListDesignModel : ChatListViewModel
     {
         public static ChatListDesignModel Instance { get { return instance; } }
 
