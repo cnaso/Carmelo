@@ -5,7 +5,7 @@
                     xmlns:fa="clr-namespace:FontAwesome.WPF;assembly=FontAwesome.WPF">
 
     <!-- Hoverless button -->
-    <Style TargetType="{x:Type Button}" x:Key="Hoverless">
+    <Style TargetType="{x:Type Button}" x:Key="Button.Hoverless">
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="BorderThickness" Value="0" />
 
@@ -21,16 +21,16 @@
     </Style>
 
     <!-- Window menu button -->
-    <Style TargetType="{x:Type Button}" x:Key="SystemIconButton" BasedOn="{StaticResource Hoverless}">
+    <Style TargetType="{x:Type Button}" x:Key="Button.WindowMenu" BasedOn="{StaticResource Button.Hoverless}">
         <Setter Property="WindowChrome.IsHitTestVisibleInChrome" Value="True" />
         <Setter Property="Padding" Value="7" />
     </Style>
 
     <!-- Window control button -->
-    <Style TargetType="{x:Type Button}" x:Key="WindowControlButton" BasedOn="{StaticResource BaseStyle}">
+    <Style TargetType="{x:Type Button}" x:Key="Button.WindowState" BasedOn="{StaticResource BaseStyle}">
         <Setter Property="WindowChrome.IsHitTestVisibleInChrome" Value="True" />
         <Setter Property="Background" Value="Transparent" />
-        <Setter Property="Foreground" Value="{StaticResource ForegroundGrayBrush}" />
+        <Setter Property="Foreground" Value="{StaticResource Color.DarkGrayBrush}" />
         <Setter Property="Padding" Value="8" />
         <Setter Property="VerticalAlignment" Value="Stretch" />
 
@@ -52,7 +52,7 @@
 
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Background" Value="{StaticResource BackgroundGrayBrush}" />
+                <Setter Property="Background" Value="{StaticResource Color.RegularGrayBrush}" />
             </Trigger>
             <Trigger Property="Button.IsPressed" Value="True" >
                 <Setter Property="Padding" Value="7 9 9 7" />
@@ -61,29 +61,34 @@
     </Style>
 
     <!-- Close button -->
-    <Style TargetType="{x:Type Button}" x:Key="CloseButton" BasedOn="{StaticResource WindowControlButton}">
+    <Style TargetType="{x:Type Button}" x:Key="Button.Close" BasedOn="{StaticResource Button.WindowState}">
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
                 <Setter Property="Background" Value="Crimson" />
-                <Setter Property="Foreground" Value="{StaticResource ForegroundWhiteBrush}" />
+                <Setter Property="Foreground" Value="{StaticResource Color.WhiteBrush}" />
             </Trigger>
         </Style.Triggers>
     </Style>
     
     <!-- Orange button -->
-    <Style x:Key="OrangeButton" TargetType="{x:Type Button}" BasedOn="{StaticResource BaseStyle}">
-        <Setter Property="Background" Value="{StaticResource OrangeBrush}" />
-        <Setter Property="Foreground" Value="{StaticResource ForegroundWhiteBrush}" />
+    <Style TargetType="{x:Type Button}" x:Key="Button.Orange" BasedOn="{StaticResource BaseStyle}">
+        <Setter Property="Background" Value="{StaticResource Color.OrangeBrush}" />
+        <Setter Property="Foreground" Value="{StaticResource Color.WhiteBrush}" />
         <Setter Property="BorderThickness" Value="0" />
-        <Setter Property="FontSize" Value="{StaticResource FontSizeLarge}" />
-        <Setter Property="FontFamily" Value="{StaticResource LatoRegular}" />
+        <Setter Property="FontSize" Value="{StaticResource FontSize.Large}" />
+        <Setter Property="FontFamily" Value="{StaticResource Lato.Regular}" />
         <Setter Property="Padding" Value="50 10" />
         <Setter Property="Margin" Value="0 10" />
         <Setter Property="properties:IsBusyProperty.Value" Value="False" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type ButtonBase}">
-                    <Border x:Name="border" CornerRadius="10" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="True">
+                    <Border x:Name="border" 
+                            CornerRadius="10" 
+                            BorderBrush="{TemplateBinding BorderBrush}" 
+                            BorderThickness="{TemplateBinding BorderThickness}" 
+                            Background="{TemplateBinding Background}" 
+                            SnapsToDevicePixels="True">
                         <Grid>
                             <TextBlock Text="{TemplateBinding Content}" 
                                        FontFamily="{TemplateBinding FontFamily}" 
@@ -105,19 +110,25 @@
                         <EventTrigger RoutedEvent="MouseEnter">
                             <BeginStoryboard>
                                 <Storyboard>
-                                    <ColorAnimation To="{StaticResource Blue}" Duration="0:0:0.3" Storyboard.TargetName="border" Storyboard.TargetProperty="Background.Color" />
+                                    <ColorAnimation To="{StaticResource Color.Blue}" 
+                                                    Duration="0:0:0.3" 
+                                                    Storyboard.TargetName="border" 
+                                                    Storyboard.TargetProperty="Background.Color" />
                                 </Storyboard>
                             </BeginStoryboard>
                         </EventTrigger>
                         <EventTrigger RoutedEvent="MouseLeave">
                             <BeginStoryboard>
                                 <Storyboard>
-                                    <ColorAnimation To="{StaticResource Orange}" Duration="0:0:0.3" Storyboard.TargetName="border" Storyboard.TargetProperty="Background.Color" />
+                                    <ColorAnimation To="{StaticResource Color.Orange}" 
+                                                    Duration="0:0:0.3" 
+                                                    Storyboard.TargetName="border" 
+                                                    Storyboard.TargetProperty="Background.Color" />
                                 </Storyboard>
                             </BeginStoryboard>
                         </EventTrigger>
                         <Trigger Property="IsEnabled" Value="False">
-                            <Setter Property="Background" TargetName="border" Value="{StaticResource ForegroundGray}"/>
+                            <Setter Property="Background" TargetName="border" Value="{StaticResource Color.RegularGray}"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -126,12 +137,12 @@
     </Style>
 
     <!-- Transparent button -->
-    <Style x:Key="TransparentButton" TargetType="{x:Type Button}" BasedOn="{StaticResource BaseStyle}">
+    <Style TargetType="{x:Type Button}" x:Key="Button.Transparent" BasedOn="{StaticResource BaseStyle}">
         <Setter Property="Background" Value="Transparent" />
-        <Setter Property="Foreground" Value="{StaticResource ForegroundWhiteBrush}" />
+        <Setter Property="Foreground" Value="{StaticResource Color.WhiteBrush}" />
         <Setter Property="BorderThickness" Value="0" />
-        <Setter Property="FontSize" Value="{StaticResource FontSizeRegular}" />
-        <Setter Property="FontFamily" Value="{StaticResource LatoRegular}" />
+        <Setter Property="FontSize" Value="{StaticResource FontSize.Regular}" />
+        <Setter Property="FontFamily" Value="{StaticResource Lato.Regular}" />
         <Setter Property="Padding" Value="50 10" />
         <Setter Property="Margin" Value="0 10" />
         <Setter Property="Template">
@@ -153,10 +164,10 @@
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Foreground" Value="{StaticResource OrangeBrush}"/>
+                            <Setter Property="Foreground" Value="{StaticResource Color.OrangeBrush}"/>
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="False">
-                            <Setter Property="Foreground" Value="{StaticResource ForegroundBlackBrush}"/>
+                            <Setter Property="Foreground" Value="{StaticResource Color.BlackBrush}"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -165,11 +176,11 @@
     </Style>
 
     <!-- Icon button -->
-    <Style x:Key="IconButton" TargetType="{x:Type Button}" BasedOn="{StaticResource BaseStyle}">
-        <Setter Property="Background" Value="{StaticResource BlueBrush}" />
-        <Setter Property="Foreground" Value="{StaticResource ForegroundWhiteBrush}" />
+    <Style TargetType="{x:Type Button}" x:Key="Button.Icon" BasedOn="{StaticResource BaseStyle}">
+        <Setter Property="Background" Value="{StaticResource Color.BlueBrush}" />
+        <Setter Property="Foreground" Value="{StaticResource Color.WhiteBrush}" />
         <Setter Property="BorderThickness" Value="0" />
-        <Setter Property="FontSize" Value="{StaticResource FontSizeLarge}" />
+        <Setter Property="FontSize" Value="{StaticResource FontSize.Large}" />
         <Setter Property="FontFamily" Value="{StaticResource FontAwesome}" />
         <Setter Property="Padding" Value="20" />
         <Setter Property="Margin" Value="0" />
@@ -198,14 +209,20 @@
                         <EventTrigger RoutedEvent="MouseEnter">
                             <BeginStoryboard>
                                 <Storyboard>
-                                    <ColorAnimation To="{StaticResource LightBlue}" Duration="0:0:0.3" Storyboard.TargetName="border" Storyboard.TargetProperty="Background.Color" />
+                                    <ColorAnimation To="{StaticResource Color.LightBlue}" 
+                                                    Duration="0:0:0.3" 
+                                                    Storyboard.TargetName="border" 
+                                                    Storyboard.TargetProperty="Background.Color" />
                                 </Storyboard>
                             </BeginStoryboard>
                         </EventTrigger>
                         <EventTrigger RoutedEvent="MouseLeave">
                             <BeginStoryboard>
                                 <Storyboard>
-                                    <ColorAnimation To="{StaticResource Blue}" Duration="0:0:0.3" Storyboard.TargetName="border" Storyboard.TargetProperty="Background.Color" />
+                                    <ColorAnimation To="{StaticResource Color.Blue}" 
+                                                    Duration="0:0:0.3" 
+                                                    Storyboard.TargetName="border" 
+                                                    Storyboard.TargetProperty="Background.Color" />
                                 </Storyboard>
                             </BeginStoryboard>
                         </EventTrigger>
@@ -213,7 +230,7 @@
                             <Setter Property="Padding" Value="18 22 22 18" />
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="False">
-                            <Setter Property="Background" TargetName="border" Value="{StaticResource ForegroundGray}"/>
+                            <Setter Property="Background" TargetName="border" Value="{StaticResource Color.RegularGray}"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

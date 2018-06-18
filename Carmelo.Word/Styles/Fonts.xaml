@@ -2,18 +2,18 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:system="clr-namespace:System;assembly=mscorlib">
     
-    <FontFamily x:Key="LatoRegular">pack://application:,,,/Fonts/#Lato</FontFamily>
-    <FontFamily x:Key="LatoHairline">pack://application:,,,/Fonts/#Lato Hairline</FontFamily>
-    <FontFamily x:Key="LatoLight">pack://application:,,,/Fonts/#Lato Light</FontFamily>
-    <FontFamily x:Key="LatoBold">pack://application:,,,/Fonts/#Lato Bold</FontFamily>
+    <FontFamily x:Key="Lato.Regular">pack://application:,,,/Fonts/#Lato</FontFamily>
+    <FontFamily x:Key="Lato.Hairline">pack://application:,,,/Fonts/#Lato Hairline</FontFamily>
+    <FontFamily x:Key="Lato.Light">pack://application:,,,/Fonts/#Lato Light</FontFamily>
+    <FontFamily x:Key="Lato.Bold">pack://application:,,,/Fonts/#Lato Bold</FontFamily>
     <FontFamily x:Key="FontAwesome">pack://application:,,,/FontAwesome.WPF;component/#FontAwesome</FontFamily>
 
     <Style TargetType="{x:Type Control}" x:Key="BaseStyle">
-        <Setter Property="FontFamily" Value="{StaticResource LatoHairline}" />
+        <Setter Property="FontFamily" Value="{StaticResource Lato.Hairline}" />
     </Style>
 
     <Style TargetType="{x:Type TextBlock}" x:Key="BaseTextBlockStyle">
-        <Setter Property="FontFamily" Value="{StaticResource LatoLight}" />
+        <Setter Property="FontFamily" Value="{StaticResource Lato.Light}" />
     </Style>
 
     <Style TargetType="{x:Type Button}" BasedOn="{StaticResource BaseStyle}" />
@@ -22,15 +22,15 @@
     <Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource BaseTextBlockStyle}" />
     <Style TargetType="{x:Type ListView}" BasedOn="{StaticResource BaseStyle}" />
 
-    <system:Double x:Key="FontSizeRegular">20</system:Double>
-    <system:Double x:Key="FontSizeMedium">18</system:Double>
-    <system:Double x:Key="FontSizeSmall">14</system:Double>
-    <system:Double x:Key="FontSizeLarge">30</system:Double>
+    <system:Double x:Key="FontSize.Regular">20</system:Double>
+    <system:Double x:Key="FontSize.Medium">18</system:Double>
+    <system:Double x:Key="FontSize.Small">14</system:Double>
+    <system:Double x:Key="FontSize.Large">30</system:Double>
 
     <!-- FontAwesome unicode -->
-    <system:String x:Key="ChatIcon">&#xf086;</system:String>
-    <system:String x:Key="UserIcon">&#xf007;</system:String>
-    <system:String x:Key="ImageIcon">&#xf1c5;</system:String>
-    <system:String x:Key="SettingsIcon">&#xf013;</system:String>
-    <system:String x:Key="MainIcon">&#xf391;</system:String>
+    <system:String x:Key="FontAwesome.ChatIcon">&#xf086;</system:String>
+    <system:String x:Key="FontAwesome.UserIcon">&#xf007;</system:String>
+    <system:String x:Key="FontAwesome.ImageIcon">&#xf1c5;</system:String>
+    <system:String x:Key="FontAwesome.SettingsIcon">&#xf013;</system:String>
+    <system:String x:Key="FontAwesome.MainIcon">&#xf391;</system:String>
 </ResourceDictionary>

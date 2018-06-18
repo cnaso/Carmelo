@@ -3,18 +3,18 @@
                     xmlns:properties="clr-namespace:Carmelo.Word.AttachedProperties"
                     xmlns:converters='clr-namespace:Carmelo.Word.ValueConverters'>
 
-    <Style TargetType="{x:Type TextBlock}" x:Key="HeaderText" BasedOn="{StaticResource BaseTextBlockStyle}">
+    <Style TargetType="{x:Type TextBlock}" x:Key="Text.WindowHeader" BasedOn="{StaticResource BaseTextBlockStyle}">
         <Setter Property="Foreground" Value="{StaticResource ForegroundGrayBrush}" />
         <Setter Property="VerticalAlignment" Value="Center" />
         <Setter Property="HorizontalAlignment" Value="Center" />
         <Setter Property="Margin" Value="1.0" />
-        <Setter Property="FontFamily" Value="{StaticResource LatoBold}" />
+        <Setter Property="FontFamily" Value="{StaticResource Lato.Bold}" />
     </Style>
 
     <Style TargetType="{x:Type TextBox}" BasedOn="{StaticResource BaseStyle}">
-        <Setter Property="BorderBrush" Value="{StaticResource BlueBrush}" />
-        <Setter Property="FontFamily" Value="{StaticResource LatoRegular}" />
-        <Setter Property="FontSize" Value="{StaticResource FontSizeLarge}" />
+        <Setter Property="BorderBrush" Value="{StaticResource Color.BlueBrush}" />
+        <Setter Property="FontFamily" Value="{StaticResource Lato.Regular}" />
+        <Setter Property="FontSize" Value="{StaticResource FontSize.Large}" />
         <Setter Property="Padding" Value="10" />
         <Setter Property="Margin" Value="0 5 0 5" />
         <Setter Property="BorderThickness" Value="0 0 0 1" />
@@ -22,13 +22,20 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type TextBoxBase}">
                     <Grid>
-                        <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="True">
-                            <ScrollViewer x:Name="PART_ContentHost" Focusable="False" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"/>
+                        <Border x:Name="border" 
+                                BorderBrush="{TemplateBinding BorderBrush}" 
+                                BorderThickness="{TemplateBinding BorderThickness}" 
+                                Background="{TemplateBinding Background}" 
+                                SnapsToDevicePixels="True">
+                            <ScrollViewer x:Name="PART_ContentHost" 
+                                          Focusable="False" 
+                                          HorizontalScrollBarVisibility="Hidden" 
+                                          VerticalScrollBarVisibility="Hidden"/>
                         </Border>
                         <TextBlock x:Name="TextPlaceholder" 
                                    IsHitTestVisible="False" 
                                    Text="{TemplateBinding Tag}" 
-                                   FontFamily="{StaticResource LatoHairline}" 
+                                   FontFamily="{StaticResource Lato.Hairline}" 
                                    Padding="{TemplateBinding Padding}" 
                                    VerticalAlignment="Center" 
                                    HorizontalAlignment="{TemplateBinding HorizontalAlignment}" 
@@ -62,9 +69,9 @@
     </Style>
 
     <Style TargetType="{x:Type PasswordBox}" BasedOn="{StaticResource BaseStyle}">
-        <Setter Property="BorderBrush" Value="{StaticResource BlueBrush}" />
-        <Setter Property="FontFamily" Value="{StaticResource LatoRegular}" />
-        <Setter Property="FontSize" Value="{StaticResource FontSizeLarge}" />
+        <Setter Property="BorderBrush" Value="{StaticResource Color.BlueBrush}" />
+        <Setter Property="FontFamily" Value="{StaticResource Lato.Regular}" />
+        <Setter Property="FontSize" Value="{StaticResource FontSize.Large}" />
         <Setter Property="Padding" Value="10" />
         <Setter Property="Margin" Value="0 5 0 5" />
         <Setter Property="BorderThickness" Value="0 0 0 1" />
@@ -73,13 +80,20 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type PasswordBox}">
                     <Grid>
-                        <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="True">
-                            <ScrollViewer x:Name="PART_ContentHost" Focusable="False" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden" />
+                        <Border x:Name="border" 
+                                BorderBrush="{TemplateBinding BorderBrush}" 
+                                BorderThickness="{TemplateBinding BorderThickness}" 
+                                Background="{TemplateBinding Background}" 
+                                SnapsToDevicePixels="True">
+                            <ScrollViewer x:Name="PART_ContentHost" 
+                                          Focusable="False" 
+                                          HorizontalScrollBarVisibility="Hidden" 
+                                          VerticalScrollBarVisibility="Hidden" />
                         </Border>
                         <TextBlock x:Name="PasswordTextPlaceholder" 
                                    IsHitTestVisible="False" 
                                    Text="{TemplateBinding Tag}" 
-                                   FontFamily="{StaticResource LatoHairline}" 
+                                   FontFamily="{StaticResource Lato.Hairline}" 
                                    Padding="{TemplateBinding Padding}" 
                                    VerticalAlignment="Center" 
                                    HorizontalAlignment="{TemplateBinding HorizontalAlignment}" 

@@ -1,42 +1,42 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     
-    <Color x:Key="BackgroundGray">#efefef</Color>
-    <SolidColorBrush x:Key="BackgroundGrayBrush" Color="{StaticResource BackgroundGray}" />
+    <Color x:Key="Color.RegularGray">#efefef</Color>
+    <SolidColorBrush x:Key="Color.RegularGrayBrush" Color="{StaticResource Color.RegularGray}" />
 
-    <Color x:Key="BackgroundLightGray">#fafafa</Color>
-    <SolidColorBrush x:Key="BackgroundLightGrayBrush" Color="{StaticResource BackgroundLightGray}" />
+    <Color x:Key="Color.FadedGray">#fafafa</Color>
+    <SolidColorBrush x:Key="Color.FadedGrayBrush" Color="{StaticResource Color.FadedGray}" />
 
-    <Color x:Key="ForegroundGray">#686868</Color>
-    <SolidColorBrush x:Key="ForegroundGrayBrush" Color="{StaticResource ForegroundGray}" />
+    <Color x:Key="Color.DarkGray">#686868</Color>
+    <SolidColorBrush x:Key="Color.DarkGrayBrush" Color="{StaticResource Color.DarkGray}" />
 
-    <Color x:Key="ForegroundBlack">#000000</Color>
-    <SolidColorBrush x:Key="ForegroundBlackBrush" Color="{StaticResource ForegroundBlack}" />
+    <Color x:Key="Color.Black">#000000</Color>
+    <SolidColorBrush x:Key="Color.BlackBrush" Color="{StaticResource Color.Black}" />
 
-    <Color x:Key="ForegroundWhite">#ffffff</Color>
-    <SolidColorBrush x:Key="ForegroundWhiteBrush" Color="{StaticResource ForegroundWhite}" />
+    <Color x:Key="Color.White">#ffffff</Color>
+    <SolidColorBrush x:Key="Color.WhiteBrush" Color="{StaticResource Color.White}" />
 
-    <Color x:Key="ForegroundFadedGray">#bdbdbd</Color>
-    <SolidColorBrush x:Key="ForegroundFadedGrayBrush" Color="{StaticResource ForegroundFadedGray}" />
+    <Color x:Key="Color.FadedDarkGray">#bdbdbd</Color>
+    <SolidColorBrush x:Key="Color.FadedDarkGrayBrush" Color="{StaticResource Color.FadedDarkGray}" />
 
-    <Color x:Key="Blue">#3099c5</Color>
-    <SolidColorBrush x:Key="BlueBrush" Color="{StaticResource Blue}" />
+    <Color x:Key="Color.Blue">#3099c5</Color>
+    <SolidColorBrush x:Key="Color.BlueBrush" Color="{StaticResource Color.Blue}" />
 
-    <Color x:Key="LightBlue">#45b6e5</Color>
-    <SolidColorBrush x:Key="LightBlueBrush" Color="{StaticResource LightBlue}" />
+    <Color x:Key="Color.LightBlue">#45b6e5</Color>
+    <SolidColorBrush x:Key="Color.LightBlueBrush" Color="{StaticResource Color.LightBlue}" />
 
-    <Color x:Key="DarkBlue">#0c6991</Color>
-    <SolidColorBrush x:Key="DarkBlueBrush" Color="{StaticResource DarkBlue}" />
+    <Color x:Key="Color.DarkBlue">#0c6991</Color>
+    <SolidColorBrush x:Key="Color.DarkBlueBrush" Color="{StaticResource Color.DarkBlue}" />
 
-    <Color x:Key="FadedBlue">#ecf6fb</Color>
-    <SolidColorBrush x:Key="FadedBlueBrush" Color="{StaticResource FadedBlue}" />
+    <Color x:Key="Color.FadedBlue">#ecf6fb</Color>
+    <SolidColorBrush x:Key="Color.FadedBlueBrush" Color="{StaticResource Color.FadedBlue}" />
 
-    <Color x:Key="Orange">#ffa800</Color>
-    <SolidColorBrush x:Key="OrangeBrush" Color="{StaticResource Orange}" />
+    <Color x:Key="Color.Orange">#ffa800</Color>
+    <SolidColorBrush x:Key="Color.OrangeBrush" Color="{StaticResource Color.Orange}" />
 
-    <Color x:Key="Red">#ff4747</Color>
-    <SolidColorBrush x:Key="RedBrush" Color="{StaticResource Red}" />
+    <Color x:Key="Color.Red">#ff4747</Color>
+    <SolidColorBrush x:Key="Color.RedBrush" Color="{StaticResource Color.Red}" />
 
-    <Color x:Key="Green">#00c541</Color>
-    <SolidColorBrush x:Key="GreenBrush" Color="{StaticResource Green}" />
+    <Color x:Key="Color.Green">#00c541</Color>
+    <SolidColorBrush x:Key="Color.GreenBrush" Color="{StaticResource Color.Green}" />
 </ResourceDictionary>
