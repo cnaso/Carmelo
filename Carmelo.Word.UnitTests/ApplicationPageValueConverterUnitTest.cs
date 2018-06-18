@@ -1,4 +1,4 @@
-﻿using Carmelo.Word.DataModels;
+﻿using Carmelo.Word.Core.DataModels;
 using Carmelo.Word.Pages;
 using Carmelo.Word.ValueConverters;
 using NUnit.Framework;
