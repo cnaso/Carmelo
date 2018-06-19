@@ -39,7 +39,7 @@
                                    Padding="{TemplateBinding Padding}" 
                                    VerticalAlignment="Center" 
                                    HorizontalAlignment="{TemplateBinding HorizontalAlignment}" 
-                                   Foreground="{StaticResource ForegroundBlackBrush}">
+                                   Foreground="{StaticResource Color.BlackBrush}">
                             <TextBlock.Style>
                                 <Style TargetType="{x:Type TextBlock}">
                                     <Setter Property="Visibility" Value="Collapsed" />
@@ -97,7 +97,7 @@
                                    Padding="{TemplateBinding Padding}" 
                                    VerticalAlignment="Center" 
                                    HorizontalAlignment="{TemplateBinding HorizontalAlignment}" 
-                                   Foreground="{StaticResource ForegroundBlackBrush}"
+                                   Foreground="{StaticResource Color.BlackBrush}"
                                    Visibility="{TemplateBinding properties:HasTextProperty.Value, Converter={converters:InverseBooleanToVisibilityValueConverter}}">
                         </TextBlock>
                     </Grid>

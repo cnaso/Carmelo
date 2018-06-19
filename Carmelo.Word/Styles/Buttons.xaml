@@ -102,7 +102,7 @@
                                             Spin="True"
                                             Height="30"
                                             Width="30"
-                                            Foreground="{StaticResource ForegroundWhiteBrush}"
+                                            Foreground="{StaticResource Color.WhiteBrush}"
                                             Visibility="{TemplateBinding properties:IsBusyProperty.Value, Converter={converters:InverseBooleanToVisibilityValueConverter}, ConverterParameter=True}" />
                         </Grid>
                     </Border>
