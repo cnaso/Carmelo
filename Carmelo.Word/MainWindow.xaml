@@ -6,7 +6,9 @@
         xmlns:local="clr-namespace:Carmelo.Word"
         xmlns:controls="clr-namespace:Carmelo.Word.Controls"
         xmlns:converters="clr-namespace:Carmelo.Word.ValueConverters"
+        xmlns:viewmodels="clr-namespace:Carmelo.Word.ViewModels"
         xmlns:fa="clr-namespace:FontAwesome.WPF;assembly=FontAwesome.WPF"
+        xmlns:core="http://schemas.carmelo.com/cw/"
         mc:Ignorable="d"
         WindowStyle="None"
         AllowsTransparency="True"
@@ -174,7 +176,7 @@
             <!-- Main page -->
             <Frame Grid.Column="1" 
                    x:Name="MainFrame" 
-                   Content="{Binding CurrentPage, Converter={converters:ApplicationPageValueConverter}}" 
+                   Content="{Binding ApplicationViewModel.CurrentPage, Source={x:Static viewmodels:ViewModelLocator.Instance}, Converter={converters:ApplicationPageValueConverter}}" 
                    Background="Transparent" />
         </Grid>
     </Border>
