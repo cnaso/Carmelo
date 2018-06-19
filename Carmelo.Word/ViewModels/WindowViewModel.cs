@@ -1,5 +1,4 @@
 ﻿using Carmelo.Word.Core.Commands;
-using Carmelo.Word.Core.DataModels;
 using Carmelo.Word.Core.ViewModels.Base;
 using Carmelo.Word.Windows;
 using System.Windows;
@@ -59,8 +58,6 @@ namespace Carmelo.Word.ViewModels
         public CornerRadius WindowCornerRadius { get { return new CornerRadius(WindowRadius); } }
 
         public GridLength TitleHeightGridLength { get { return new GridLength(TitleHeight + BorderSize); } }
-
-        public ApplicationPage CurrentPage { get; set; } = ApplicationPage.Chat;
 
         #endregion
 
