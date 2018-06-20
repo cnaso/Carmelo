@@ -1,5 +1,4 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media.Animation;
@@ -33,7 +32,7 @@ namespace Carmelo.Word.Animations
         }
 
         /// <summary>
-        /// Create the animation <see cref="Storyboard"/> that slides in from the right.
+        /// Create the animation <see cref="Storyboard"/> that slides out to the left.
         /// </summary>
         /// <param name="page">The page to be animated.</param>
         /// <param name="seconds">Seconds the animation takes to complete.</param>
@@ -42,7 +41,7 @@ namespace Carmelo.Word.Animations
         {
             var storyboard = new Storyboard();
 
-            storyboard.AddSlideToLeft(seconds, page.WindowWidth);
+            storyboard.AddSlideFromLeft(seconds, page.WindowWidth);
 
             storyboard.AddFade(seconds, PageAnimation.FadeOut);
 

@@ -80,8 +80,10 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Animations\PageAnimation.cs" />
+    <Compile Include="Animations\FrameElementAnimationHelpers.cs" />
     <Compile Include="Animations\PageAnimationHelpers.cs" />
     <Compile Include="Animations\StoryboardHelpers.cs" />
+    <Compile Include="AttachedProperties\AnimationAttachedProperties.cs" />
     <Compile Include="AttachedProperties\BaseAttachedProperty.cs" />
     <Compile Include="AttachedProperties\ButtonAttachedProperties.cs" />
     <Compile Include="AttachedProperties\PasswordBoxAttachedProperties.cs" />

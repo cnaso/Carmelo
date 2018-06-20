@@ -35,15 +35,15 @@ namespace Carmelo.Word.Animations
         /// </summary>
         /// <param name="storyboard">Storyboard to add the animation to.</param>
         /// <param name="seconds">Seconds the animation takes to complete.</param>
-        /// <param name="offset">Distance the page is to the right from center.</param>
+        /// <param name="offset">Distance the page is to the left from center.</param>
         /// <param name="decelerationRatio">Deceleration of the animation.</param>
-        public static void AddSlideToLeft(this Storyboard storyboard, float seconds, double offset, float decelerationRatio = 0.9f)
+        public static void AddSlideFromLeft(this Storyboard storyboard, float seconds, double offset, float decelerationRatio = 0.9f)
         {
             var animation = new ThicknessAnimation
             {
                 Duration = new Duration(TimeSpan.FromSeconds(seconds)),
-                From = new Thickness(0),
-                To = new Thickness(-offset, 0, offset, 0),
+                From = new Thickness(-offset, 0, offset, 0),
+                To = new Thickness(0),
                 DecelerationRatio = decelerationRatio
             };
 
