@@ -46,6 +46,7 @@
                     
                     <!-- Have account -->
                     <Button Style="{StaticResource Button.Transparent}" 
+                            Command="{Binding RegisterCommand}"
                             Content="I already have an account" 
                             HorizontalAlignment="Center" />
                 </StackPanel>

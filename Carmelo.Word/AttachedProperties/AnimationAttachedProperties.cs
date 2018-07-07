@@ -64,11 +64,11 @@ namespace Carmelo.Word.AttachedProperties
         {
             if (value)
             {
-                await element.SlideAndFadeInFromLeft();
+                await element.SlideAndFadeInFromLeft(keepMargin: false);
             }
             else
             {
-                await element.SlideAndFadeInFromRight();
+                await element.SlideAndFadeOutFromRight(keepMargin: false);
             }
         }
     }

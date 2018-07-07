@@ -15,13 +15,13 @@ namespace Carmelo.Word.Animations
         /// <param name="element">The element to be animated.</param>
         /// <param name="seconds">Seconds the animation takes to complete.</param>
         /// <returns></returns>
-        public static async Task SlideAndFadeInFromRight(this FrameworkElement element, float seconds = 3f)
+        public static async Task SlideAndFadeOutFromRight(this FrameworkElement element, float seconds = 0.3f, bool keepMargin = true)
         {
             var storyboard = new Storyboard();
 
-            storyboard.AddSlideFromRight(seconds, element.ActualWidth);
+            storyboard.AddSlideOutFromRight(seconds, element.ActualWidth, keepMargin: keepMargin);
 
-            storyboard.AddFade(seconds, PageAnimation.FadeIn);
+            storyboard.AddFade(seconds, PageAnimation.FadeOut);
 
             storyboard.Begin(element);
 
@@ -36,11 +36,11 @@ namespace Carmelo.Word.Animations
         /// <param name="element">The element to be animated.</param>
         /// <param name="seconds">Seconds the animation takes to complete.</param>
         /// <returns></returns>
-        public static async Task SlideAndFadeInFromLeft(this FrameworkElement element, float seconds = 0.3f)
+        public static async Task SlideAndFadeInFromLeft(this FrameworkElement element, float seconds = 0.3f, bool keepMargin = true)
         {
             var storyboard = new Storyboard();
 
-            storyboard.AddSlideFromLeft(seconds, element.ActualWidth);
+            storyboard.AddSlideFromLeft(seconds, element.ActualWidth, keepMargin: keepMargin);
 
             storyboard.AddFade(seconds, PageAnimation.FadeIn);
 
