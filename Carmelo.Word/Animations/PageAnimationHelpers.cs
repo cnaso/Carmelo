@@ -28,7 +28,7 @@ namespace Carmelo.Word.Animations
 
             page.Visibility = Visibility.Visible;
 
-            await Task.Delay((int)seconds * 1000);
+            await Task.Delay((int)(seconds * 1000));
         }
 
         /// <summary>
@@ -49,7 +49,7 @@ namespace Carmelo.Word.Animations
 
             page.Visibility = Visibility.Visible;
 
-            await Task.Delay((int)seconds * 1000);
+            await Task.Delay((int)(seconds * 1000));
         }
     }
 }
