@@ -153,10 +153,11 @@
             </controls:SideListControl>
 
             <!-- Main page -->
-            <Frame Grid.Column="1" 
+            <controls:PageHost Grid.Column="1" 
                    x:Name="MainFrame" 
-                   Content="{Binding ApplicationViewModel.CurrentPage, Source={x:Static viewmodels:ViewModelLocator.Instance}, Converter={converters:ApplicationPageValueConverter}}" 
-                   Background="Transparent" />
+                   d:DataContext=""
+                   DataContext="{Binding ApplicationViewModel.CurrentPage, Source={x:Static viewmodels:ViewModelLocator.Instance}, Converter={converters:ApplicationPageValueConverter}}"
+                   CurrentPage="{Binding}" />
         </Grid>
     </Border>
 </Window>
