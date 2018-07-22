@@ -8,7 +8,7 @@ namespace Carmelo.Word.AttachedProperties
     /// </summary>
     /// <typeparam name="Parent">Parent class of the attached property.</typeparam>
     /// <typeparam name="Property">Type of the attached property.</typeparam>
-    public abstract class BaseAttachedProperty<Parent, Property> where Parent : BaseAttachedProperty<Parent, Property>, new()
+    public abstract class BaseAttachedProperty<Parent, Property> where Parent : new()
     {
         #region Public Properties
 
@@ -78,14 +78,14 @@ namespace Carmelo.Word.AttachedProperties
         /// <param name="eventArg">Arguments for the event.</param>
         private static void OnValuePropertyChanged(DependencyObject sender, DependencyPropertyChangedEventArgs eventArg)
         {
-            Instance.OnValueChanged(sender, eventArg);
+            (Instance as BaseAttachedProperty<Parent, Property>)?.OnValueChanged(sender, eventArg);
 
-            if (Instance.ValueChanged == null)
+            if ((Instance as BaseAttachedProperty<Parent, Property>).ValueChanged == null)
             {
                 return;
             }
 
-            Instance.ValueChanged(sender, eventArg);
+            (Instance as BaseAttachedProperty<Parent, Property>)?.ValueChanged(sender, eventArg);
         }
 
         /// <summary>
@@ -95,14 +95,14 @@ namespace Carmelo.Word.AttachedProperties
         /// <param name="value">Value passed in for the event.</param>
         private static object OnValuePropertyUpdated(DependencyObject sender, object value)
         {
-            Instance.OnValueUpdated(sender, value);
+            (Instance as BaseAttachedProperty<Parent, Property>)?.OnValueUpdated(sender, value);
 
-            if (Instance.ValueUpdated == null)
+            if ((Instance as BaseAttachedProperty<Parent, Property>).ValueUpdated == null)
             {
                 return value;
             }
 
-            Instance.ValueUpdated(sender, value);
+            (Instance as BaseAttachedProperty<Parent, Property>)?.ValueUpdated(sender, value);
 
             return value;
         }
