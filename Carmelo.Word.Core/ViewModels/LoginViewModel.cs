@@ -4,6 +4,7 @@ using Carmelo.Word.Core.ViewModels.Base;
 using Carmelo.Word.Core.Commands;
 using Carmelo.Word.Core.Extensions;
 using Carmelo.Word.Core.IoC;
+using Carmelo.Word.Core.DataModels;
 
 namespace Carmelo.Word.Core.ViewModels
 {
@@ -23,7 +24,7 @@ namespace Carmelo.Word.Core.ViewModels
         public LoginViewModel()
         {
             LoginCommand = new RelayParameterizedCommand(async (parameter) => await Login(parameter));
-            RegisterCommand = new RelayParameterizedCommand(async (parameter) => await Register(parameter));
+            RegisterCommand = new RelayCommand(async () => await Register());
         }
 
         /// <summary>
@@ -35,19 +36,21 @@ namespace Carmelo.Word.Core.ViewModels
         {
             await RunCommand(() => LoginInProgress, async () =>
             {
-                await Task.Delay(5000);
-                var hash = (parameter as ISecurePassword).Password.Hash();
+                await Task.Delay(1000);
+                //var hash = (parameter as ISecurePassword).Password.Hash();
+
+                IocContainer.Get<ApplicationViewModel>().GoToPage(ApplicationPage.Chat);
             });
         }
 
         /// <summary>
-        /// Registers the user.
+        /// Takes user to the <see cref="RegisterPage"/>.
         /// </summary>
         /// <param name="parameter">Object containing register information.</param>
         /// <returns></returns>
-        public async Task Register(object parameter)
+        public async Task Register()
         {
-            IocContainer.Get<ApplicationViewModel>().SideListVisible ^= true;
+            IocContainer.Get<ApplicationViewModel>().GoToPage(ApplicationPage.Register);
         }
     }
 }
