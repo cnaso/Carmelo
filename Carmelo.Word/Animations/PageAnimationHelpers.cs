@@ -41,7 +41,7 @@ namespace Carmelo.Word.Animations
         {
             var storyboard = new Storyboard();
 
-            storyboard.AddSlideFromLeft(seconds, page.WindowWidth);
+            storyboard.AddSlideToLeft(seconds, page.WindowWidth);
 
             storyboard.AddFade(seconds, PageAnimation.FadeOut);
 
