@@ -39,15 +39,16 @@
                             <Button Style="{StaticResource Button.Orange}" 
                                     properties:IsBusyProperty.Value="{Binding LoginInProgress}" 
                                     Command="{Binding LoginCommand}" 
-                                    CommandParameter="{Binding ElementName=Login}" 
-                                    Content="Login" HorizontalAlignment="Center" />
+                                    CommandParameter="{Binding ElementName=Page}" 
+                                    Content="Login" 
+                                    HorizontalAlignment="Center" />
                         </StackPanel>
                     </Border>
                     
                     <!-- Have account -->
                     <Button Style="{StaticResource Button.Transparent}" 
                             Command="{Binding RegisterCommand}"
-                            Content="I already have an account" 
+                            Content="Create an account" 
                             HorizontalAlignment="Center" />
                 </StackPanel>
             </ScrollViewer>
