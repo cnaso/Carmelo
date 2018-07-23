@@ -6,9 +6,8 @@
              xmlns:local="clr-namespace:Carmelo.Word.Controls"
              xmlns:converters="clr-namespace:Carmelo.Word.ValueConverters"
              xmlns:core="http://schemas.carmelo.com/cw/"
-             Height="60"
              mc:Ignorable="d" 
-             d:DesignHeight="60" d:DesignWidth="300">
+             d:DesignHeight="70" d:DesignWidth="300">
     <UserControl.Resources>
         <Style x:Key="ContentStyle" TargetType="{x:Type ContentControl}">
             <Setter Property="Template">
@@ -30,7 +29,8 @@
 
                                 <!-- User initials icon -->
                                 <Border Grid.Column="0" Padding="8">
-                                    <Border Background="{Binding ProfilePictureRGB, Converter={converters:StringToBrushValueConverter}}" 
+                                    <Border Height="50"
+                                        Background="{Binding ProfilePictureRGB, Converter={converters:StringToBrushValueConverter}}" 
                                         Width="{Binding ActualHeight, RelativeSource={RelativeSource Self}}"
                                         CornerRadius="{Binding ActualHeight, RelativeSource={RelativeSource Self}}">
                                         <TextBlock Text="{Binding Initials}"
@@ -47,9 +47,11 @@
                                     <StackPanel VerticalAlignment="Center">
                                         <TextBlock Text="{Binding Name}" 
                                                FontFamily="{StaticResource Lato.Regular}" 
+                                               FontSize="{StaticResource FontSize.Medium}"
                                                Foreground="{StaticResource Color.BlueBrush}" 
                                                TextTrimming="CharacterEllipsis" />
                                         <TextBlock Text="{Binding Message}" 
+                                                   FontSize="{StaticResource FontSize.Small}"
                                                    Foreground="{StaticResource Color.FadedDarkGrayBrush}"
                                                    TextTrimming="CharacterEllipsis" />
                                     </StackPanel>
