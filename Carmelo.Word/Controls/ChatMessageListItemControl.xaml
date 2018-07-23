@@ -1,0 +1,70 @@
+﻿<UserControl x:Class="Carmelo.Word.Controls.ChatMessageListItemControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Carmelo.Word.Controls"
+             mc:Ignorable="d" 
+             d:DesignWidth="400">
+    <Border Padding="5">
+        <Grid>
+            <StackPanel Orientation="Horizontal">
+                
+                <!-- User initials -->
+                <Border CornerRadius="{Binding ActualWidth, RelativeSource={RelativeSource Self}}"
+                        Height="{Binding ActualWidth, RelativeSource={RelativeSource Self}}"
+                        HorizontalAlignment="Left"
+                        Margin="5 3 5 0"
+                        Width="35"
+                        Background="Red"
+                        VerticalAlignment="Top">
+
+                    <TextBlock Foreground="{StaticResource Color.WhiteBrush}"
+                               FontFamily="{StaticResource Lato.Regular}"
+                               HorizontalAlignment="Center"
+                               Text="LM"
+                               VerticalAlignment="Center" />
+                </Border>
+
+                <!-- Message container -->
+                <Grid>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <!-- Bubble -->
+                    <Border Grid.Row="0" 
+                            Background="{StaticResource Color.WhiteBrush}"
+                            CornerRadius="10"
+                            HorizontalAlignment="Left"
+                            Padding="15">
+
+                        <!-- Message text -->
+                        <TextBlock Foreground="{StaticResource Color.BlackBrush}" 
+                                   FontFamily="{StaticResource Lato.Light}"
+                                   Text="This chat app is awesome! When is it coming out?"
+                                   TextWrapping="Wrap"
+                                   VerticalAlignment="Center" />
+                    </Border>
+                    
+                    <!-- Message bubble triangle -->
+                    <Path Grid.Row="1" 
+                          Data="M 0,0 L 5,5 10,0"
+                          Fill="{StaticResource Color.WhiteBrush}"
+                          Margin="15 0 15 0"/>
+
+                    <!-- Message date -->
+                    <TextBlock Grid.Row="2"
+                               Foreground="{StaticResource Color.WhiteBrush}"
+                               FontFamily="{StaticResource Lato.Regular}"
+                               FontSize="{StaticResource FontSize.XSmall}"
+                               HorizontalAlignment="Right"
+                               Text="11:54 pm" />
+                </Grid>
+            </StackPanel>
+        </Grid>
+    </Border>
+</UserControl>

@@ -11,6 +11,6 @@
       Title="ChatPage">
 
     <Border Background="Transparent">
-
+        
     </Border>
 </local:BasePage>

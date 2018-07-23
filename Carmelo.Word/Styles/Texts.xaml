@@ -94,6 +94,7 @@
                                    IsHitTestVisible="False" 
                                    Text="{TemplateBinding Tag}" 
                                    FontFamily="{StaticResource Lato.Hairline}" 
+                                   FontSize="{StaticResource FontSize.Large}"
                                    Padding="{TemplateBinding Padding}" 
                                    VerticalAlignment="Center" 
                                    HorizontalAlignment="{TemplateBinding HorizontalAlignment}" 

@@ -10,10 +10,12 @@
 
     <Style TargetType="{x:Type Control}" x:Key="BaseStyle">
         <Setter Property="FontFamily" Value="{StaticResource Lato.Hairline}" />
+        <Setter Property="FontSize" Value="{StaticResource FontSize.Small}" />
     </Style>
 
     <Style TargetType="{x:Type TextBlock}" x:Key="BaseTextBlockStyle">
         <Setter Property="FontFamily" Value="{StaticResource Lato.Light}" />
+        <Setter Property="FontSize" Value="{StaticResource FontSize.Small}" />
     </Style>
 
     <Style TargetType="{x:Type Button}" BasedOn="{StaticResource BaseStyle}" />
@@ -25,6 +27,7 @@
     <system:Double x:Key="FontSize.Regular">20</system:Double>
     <system:Double x:Key="FontSize.Medium">18</system:Double>
     <system:Double x:Key="FontSize.Small">14</system:Double>
+    <system:Double x:Key="FontSize.XSmall">10</system:Double>
     <system:Double x:Key="FontSize.Large">30</system:Double>
 
     <!-- FontAwesome unicode -->
