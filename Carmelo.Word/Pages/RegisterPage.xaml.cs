@@ -2,7 +2,7 @@
 using Carmelo.Word.Core.ViewModels.Base;
 using System.Security;
 
-namespace Carmelo.Word.Pages
+namespace Carmelo.Word
 {
     /// <summary>
     /// Interaction logic for RegisterPage.xaml

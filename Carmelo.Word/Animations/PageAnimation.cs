@@ -1,4 +1,4 @@
-﻿namespace Carmelo.Word.Animations
+﻿namespace Carmelo.Word
 {
     /// <summary>
     /// Page animation types.

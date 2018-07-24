@@ -1,10 +1,9 @@
 ﻿using Carmelo.Word.Core.Commands;
 using Carmelo.Word.Core.ViewModels.Base;
-using Carmelo.Word.Windows;
 using System.Windows;
 using System.Windows.Input;
 
-namespace Carmelo.Word.ViewModels
+namespace Carmelo.Word
 {
     /// <summary>
     /// View Model to handle the custom <see cref="MainWindow"/>.

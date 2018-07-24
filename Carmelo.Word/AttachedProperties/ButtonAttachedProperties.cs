@@ -1,4 +1,4 @@
-﻿namespace Carmelo.Word.AttachedProperties
+﻿namespace Carmelo.Word
 {
     /// <summary>
     /// IsBusy attached property for the <see cref="Button"/> control.

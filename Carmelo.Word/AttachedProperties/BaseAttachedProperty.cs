@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows;
 
-namespace Carmelo.Word.AttachedProperties
+namespace Carmelo.Word
 {
     /// <summary>
     /// Base class for attached properties.

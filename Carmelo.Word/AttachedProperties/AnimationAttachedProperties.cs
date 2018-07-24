@@ -1,7 +1,6 @@
-﻿using Carmelo.Word.Animations;
-using System.Windows;
+﻿using System.Windows;
 
-namespace Carmelo.Word.AttachedProperties
+namespace Carmelo.Word
 {
     /// <summary>
     /// Base class to start any animation when the boolean value is true on a <see cref="FrameworkElement"/>.

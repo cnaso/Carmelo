@@ -3,7 +3,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media.Animation;
 
-namespace Carmelo.Word.Animations
+namespace Carmelo.Word
 {
     /// <summary>
     /// Helper class allows pages to be animated in specific ways.

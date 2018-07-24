@@ -1,7 +1,7 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
 
-namespace Carmelo.Word.AttachedProperties
+namespace Carmelo.Word
 {
     /// <summary>
     /// MonitorPassword attached property for the <see cref="PasswordBox"/> control.

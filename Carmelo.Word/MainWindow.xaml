@@ -4,10 +4,6 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Carmelo.Word"
-        xmlns:controls="clr-namespace:Carmelo.Word.Controls"
-        xmlns:converters="clr-namespace:Carmelo.Word.ValueConverters"
-        xmlns:viewmodels="clr-namespace:Carmelo.Word.ViewModels"
-        xmlns:properties="clr-namespace:Carmelo.Word.AttachedProperties"
         xmlns:fa="clr-namespace:FontAwesome.WPF;assembly=FontAwesome.WPF"
         mc:Ignorable="d"
         WindowStyle="None"
@@ -23,6 +19,7 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type Window}">
+                        
                         <!-- Outer border / drop shadow margin -->
                         <Border Margin="{Binding OuterMarginThickness}" Padding="0 0 3 0">
 
@@ -146,17 +143,17 @@
             </Grid.Background>
 
             <!-- Side list -->
-            <controls:SideListControl Grid.Column="0" 
+            <local:SideListControl Grid.Column="0" 
                                       Width="300" 
-                                      properties:SlideInFromLeftAnimationProperty.Value="{Binding ApplicationViewModel.SideListVisible, Source={x:Static viewmodels:ViewModelLocator.Instance}}">
-                <controls:ChatListControl />
-            </controls:SideListControl>
+                                      local:SlideInFromLeftAnimationProperty.Value="{Binding ApplicationViewModel.SideListVisible, Source={x:Static local:ViewModelLocator.Instance}}">
+                <local:ChatListControl />
+            </local:SideListControl>
 
             <!-- Main page -->
-            <controls:PageHost Grid.Column="1" 
+            <local:PageHost Grid.Column="1" 
                    x:Name="MainFrame" 
                    d:DataContext=""
-                   DataContext="{Binding ApplicationViewModel.CurrentPage, Source={x:Static viewmodels:ViewModelLocator.Instance}, Converter={converters:ApplicationPageValueConverter}}"
+                   DataContext="{Binding ApplicationViewModel.CurrentPage, Source={x:Static local:ViewModelLocator.Instance}, Converter={local:ApplicationPageValueConverter}}"
                    CurrentPage="{Binding}" />
         </Grid>
     </Border>

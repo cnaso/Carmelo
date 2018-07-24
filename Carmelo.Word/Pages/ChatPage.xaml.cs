@@ -1,6 +1,6 @@
 ﻿using Carmelo.Word.Core.ViewModels;
 
-namespace Carmelo.Word.Pages
+namespace Carmelo.Word
 {
     /// <summary>
     /// Interaction logic for LoginPage.xaml

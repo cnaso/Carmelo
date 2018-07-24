@@ -1,5 +1,4 @@
-﻿using Carmelo.Word.ViewModels;
-using System.Windows;
+﻿using System.Windows;
 
 namespace Carmelo.Word
 {

@@ -1,7 +1,7 @@
 ﻿using Carmelo.Word.Core.IoC;
 using Carmelo.Word.Core.ViewModels;
 
-namespace Carmelo.Word.ViewModels
+namespace Carmelo.Word
 {
     public class ViewModelLocator
     {

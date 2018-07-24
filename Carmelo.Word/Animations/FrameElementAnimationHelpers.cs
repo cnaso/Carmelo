@@ -2,7 +2,7 @@
 using System.Windows;
 using System.Windows.Media.Animation;
 
-namespace Carmelo.Word.Animations
+namespace Carmelo.Word
 {
     /// <summary>
     /// Helper class allows <see cref="FrameworkElement"/> UI objects to be animated in specific ways.

@@ -1,6 +1,6 @@
 ﻿using System.Windows.Controls;
 
-namespace Carmelo.Word.Controls
+namespace Carmelo.Word
 {
     /// <summary>
     /// Interaction logic for ChatMessageListItemControl.xaml

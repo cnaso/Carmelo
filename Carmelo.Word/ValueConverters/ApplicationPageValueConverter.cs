@@ -1,9 +1,8 @@
 ﻿using Carmelo.Word.Core.DataModels;
-using Carmelo.Word.Pages;
 using System;
 using System.Globalization;
 
-namespace Carmelo.Word.ValueConverters
+namespace Carmelo.Word
 {
     public class ApplicationPageValueConverter : BaseValueConverter<ApplicationPageValueConverter>
     {

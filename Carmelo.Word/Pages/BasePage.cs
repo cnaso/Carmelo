@@ -1,10 +1,9 @@
-﻿using Carmelo.Word.Animations;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows;
 using Carmelo.Word.Core.ViewModels.Base;
 
-namespace Carmelo.Word.Pages
+namespace Carmelo.Word
 {
     /// <summary>
     /// Base page for all pages to inherit for animation functionality.

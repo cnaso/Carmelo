@@ -2,7 +2,7 @@
 using System.Windows.Controls;
 using System.Windows.Navigation;
 
-namespace Carmelo.Word.AttachedProperties
+namespace Carmelo.Word
 {
     /// <summary>
     /// NoFrameHistory attached property for the <see cref="Frame"/> control.

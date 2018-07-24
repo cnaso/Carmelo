@@ -1,8 +1,7 @@
-﻿using Carmelo.Word.Pages;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
 
-namespace Carmelo.Word.Controls
+namespace Carmelo.Word
 {
     /// <summary>
     /// Interaction logic for PageHost.xaml

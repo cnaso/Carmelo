@@ -2,7 +2,7 @@
 using System.Windows;
 using System.Windows.Media.Animation;
 
-namespace Carmelo.Word.Animations
+namespace Carmelo.Word
 {
     /// <summary>
     /// Animation helpers for <see cref="Storyboard"/>.

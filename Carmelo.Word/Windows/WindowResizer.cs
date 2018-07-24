@@ -4,7 +4,7 @@ using System.Windows;
 using System.Windows.Interop;
 using System.Windows.Media;
 
-namespace Carmelo.Word.Windows
+namespace Carmelo.Word
 {
     /// <summary>
     /// Manages the risizing of the given window. This is the suggested way to handle Windows Chrome window states.

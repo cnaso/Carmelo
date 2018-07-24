@@ -2,7 +2,7 @@
 using System.Globalization;
 using System.Windows.Media;
 
-namespace Carmelo.Word.ValueConverters
+namespace Carmelo.Word
 {
     /// <summary>
     /// Converts RGB string to a <see cref="SolidColorBrush"/>.
