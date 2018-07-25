@@ -198,6 +198,7 @@
                             <Viewbox>
                                 <TextBlock Text="{TemplateBinding Content}"
                                        FontFamily="{TemplateBinding FontFamily}"
+                                       FontSize="{TemplateBinding FontSize}"
                                        Focusable="False"
                                        HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                        Margin="{TemplateBinding Padding}"
