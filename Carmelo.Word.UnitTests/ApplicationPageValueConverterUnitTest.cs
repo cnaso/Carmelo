@@ -1,6 +1,4 @@
-﻿using Carmelo.Word.Core.DataModels;
-using Carmelo.Word.Pages;
-using Carmelo.Word.ValueConverters;
+﻿using Carmelo.Word.Core;
 using NUnit.Framework;
 using System.Globalization;
 using System.Threading;

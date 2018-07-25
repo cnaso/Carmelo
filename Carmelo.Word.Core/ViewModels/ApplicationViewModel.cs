@@ -1,7 +1,4 @@
-﻿using Carmelo.Word.Core.DataModels;
-using Carmelo.Word.Core.ViewModels.Base;
-
-namespace Carmelo.Word.Core.ViewModels
+﻿namespace Carmelo.Word.Core
 {
     /// <summary>
     /// Application view state.

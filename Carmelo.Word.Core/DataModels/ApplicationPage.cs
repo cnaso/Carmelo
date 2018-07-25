@@ -1,4 +1,4 @@
-﻿namespace Carmelo.Word.Core.DataModels
+﻿namespace Carmelo.Word.Core
 {
     public enum ApplicationPage
     {

@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace Carmelo.Word.Core.Extensions
+namespace Carmelo.Word.Core
 {
     /// <summary>
     /// Convenience extensions for <see cref="PropertyChanged"/>.

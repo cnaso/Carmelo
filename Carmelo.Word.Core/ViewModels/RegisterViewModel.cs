@@ -1,12 +1,7 @@
 ﻿using System.Windows.Input;
 using System.Threading.Tasks;
-using Carmelo.Word.Core.ViewModels.Base;
-using Carmelo.Word.Core.Commands;
-using Carmelo.Word.Core.Extensions;
-using Carmelo.Word.Core.IoC;
-using Carmelo.Word.Core.DataModels;
 
-namespace Carmelo.Word.Core.ViewModels
+namespace Carmelo.Word.Core
 {
     /// <summary>
     /// View Model to handle the <see cref="RegisterPage"/>.

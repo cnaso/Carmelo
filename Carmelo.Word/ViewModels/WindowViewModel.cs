@@ -1,5 +1,4 @@
-﻿using Carmelo.Word.Core.Commands;
-using Carmelo.Word.Core.ViewModels.Base;
+﻿using Carmelo.Word.Core;
 using System.Windows;
 using System.Windows.Input;
 

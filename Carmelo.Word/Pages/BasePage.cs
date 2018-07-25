@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows;
-using Carmelo.Word.Core.ViewModels.Base;
+using Carmelo.Word.Core;
 
 namespace Carmelo.Word
 {

@@ -1,6 +1,6 @@
 ﻿using System.Security;
 
-namespace Carmelo.Word.Core.ViewModels.Base
+namespace Carmelo.Word.Core
 {
     /// <summary>
     /// Interface provides a <see cref="SecureString"/> to the inheriting class.

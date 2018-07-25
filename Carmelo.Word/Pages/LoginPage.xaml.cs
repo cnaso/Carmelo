@@ -1,5 +1,4 @@
-﻿using Carmelo.Word.Core.ViewModels;
-using Carmelo.Word.Core.ViewModels.Base;
+﻿using Carmelo.Word.Core;
 using System.Security;
 
 namespace Carmelo.Word

@@ -2,7 +2,7 @@
 using System.Runtime.InteropServices;
 using System.Security;
 
-namespace Carmelo.Word.Core.Extensions
+namespace Carmelo.Word.Core
 {
     /// <summary>
     /// Convenience extensions for <see cref="SecureString"/>.

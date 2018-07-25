@@ -1,5 +1,4 @@
-﻿using Carmelo.Word.Core.IoC;
-using Carmelo.Word.Core.ViewModels;
+﻿using Carmelo.Word.Core;
 
 namespace Carmelo.Word
 {

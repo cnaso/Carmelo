@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Input;
 
-namespace Carmelo.Word.Core.Commands
+namespace Carmelo.Word.Core
 {
     /// <summary>
     /// Class handles firing parameterized commands implemented from the <see cref="ICommand"/> interface.

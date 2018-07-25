@@ -1,13 +1,5 @@
 ﻿using System.Reflection;
 using System.Runtime.InteropServices;
-using System.Windows.Markup;
-
-[assembly: XmlnsPrefix("http://schemas.carmelo.com/cw/", "core")]
-[assembly: XmlnsDefinition("http://schemas.carmelo.com/cw/", "Carmelo.Word.Core.Commands")]
-[assembly: XmlnsDefinition("http://schemas.carmelo.com/cw/", "Carmelo.Word.Core.ViewModels")]
-[assembly: XmlnsDefinition("http://schemas.carmelo.com/cw/", "Carmelo.Word.Core.ViewModels.Base")]
-[assembly: XmlnsDefinition("http://schemas.carmelo.com/cw/", "Carmelo.Word.Core.ViewModels.Chat")]
-[assembly: XmlnsDefinition("http://schemas.carmelo.com/cw/", "Carmelo.Word.Core.ViewModels.Chat.Design")]
 
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information

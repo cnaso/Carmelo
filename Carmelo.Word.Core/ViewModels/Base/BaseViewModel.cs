@@ -2,9 +2,8 @@
 using System.Linq.Expressions;
 using System;
 using System.Threading.Tasks;
-using Carmelo.Word.Core.Extensions;
 
-namespace Carmelo.Word.Core.ViewModels.Base
+namespace Carmelo.Word.Core
 {
     /// <summary>
     /// Base class for View Models that handles <see cref="PropertyChanged"/> events.

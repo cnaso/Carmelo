@@ -1,6 +1,4 @@
-﻿using Carmelo.Word.Core.ViewModels.Base;
-
-namespace Carmelo.Word.Core.ViewModels.Chat
+﻿namespace Carmelo.Word.Core
 {
     /// <summary>
     /// View Model for the <see cref="ChatListItemControl"/> user control.

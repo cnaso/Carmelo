@@ -1,7 +1,6 @@
 ﻿using Ninject;
-using Carmelo.Word.Core.ViewModels;
 
-namespace Carmelo.Word.Core.IoC
+namespace Carmelo.Word.Core
 {
     /// <summary>
     /// Inversion of Control container for the application.

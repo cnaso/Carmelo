@@ -1,4 +1,4 @@
-﻿namespace Carmelo.Word.Core.ViewModels.Chat.Design
+﻿namespace Carmelo.Word.Core
 {
     /// <summary>
     /// Design Model for the <see cref="ChatListItemViewModel"/>.

@@ -1,4 +1,4 @@
-﻿using Carmelo.Word.Core.IoC;
+﻿using Carmelo.Word.Core;
 using System.Windows;
 
 namespace Carmelo.Word
