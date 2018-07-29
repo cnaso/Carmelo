@@ -25,6 +25,9 @@
     <Color x:Key="Color.LightBlue">#45b6e5</Color>
     <SolidColorBrush x:Key="Color.LightBlueBrush" Color="{StaticResource Color.LightBlue}" />
 
+    <Color x:Key="Color.FadedLightBlue">#c3e5f3</Color>
+    <SolidColorBrush x:Key="Color.FadedLightBlueBrush" Color="{StaticResource Color.FadedLightBlue}" />
+
     <Color x:Key="Color.DarkBlue">#0c6991</Color>
     <SolidColorBrush x:Key="Color.DarkBlueBrush" Color="{StaticResource Color.DarkBlue}" />
 
