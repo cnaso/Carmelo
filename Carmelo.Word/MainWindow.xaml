@@ -123,12 +123,12 @@
     </Window.Resources>
     
     <WindowChrome.WindowChrome>
-        <WindowChrome 
-            ResizeBorderThickness="{Binding ResizedBorderThickness}"
-            CaptionHeight="{Binding TitleHeight}"
-            GlassFrameThickness="0" />
+        <WindowChrome CaptionHeight="{Binding TitleHeight}"
+                      GlassFrameThickness="0"
+                      ResizeBorderThickness="{Binding ResizedBorderThickness}" />
     </WindowChrome.WindowChrome>
 
+    <!-- Main window background -->
     <Border Background="{StaticResource Color.BlueBrush}">
         <Grid>
             <Grid.ColumnDefinitions>
@@ -136,16 +136,16 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
             <Grid.Background>
-                <ImageBrush TileMode="Tile" 
+                <ImageBrush ImageSource="/Images/Background/emoji-background.png"
+                            TileMode="Tile" 
                             ViewportUnits="Absolute" 
-                            Viewport="0 0 500 500" 
-                            ImageSource="/Images/Background/emoji-background.png" />
+                            Viewport="0 0 500 500" />
             </Grid.Background>
 
             <!-- Side list -->
             <local:SideListControl Grid.Column="0" 
-                                      Width="300" 
-                                      local:SlideInFromLeftAnimationProperty.Value="{Binding ApplicationViewModel.SideListVisible, Source={x:Static local:ViewModelLocator.Instance}}">
+                                   local:SlideInFromLeftAnimationProperty.Value="{Binding ApplicationViewModel.SideListVisible, Source={x:Static local:ViewModelLocator.Instance}}"
+                                   Width="300">
                 <local:ChatListControl />
             </local:SideListControl>
 
