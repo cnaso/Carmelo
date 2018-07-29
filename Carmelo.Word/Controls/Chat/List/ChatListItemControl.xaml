@@ -36,7 +36,7 @@
                                                VerticalAlignment="Center"
                                                HorizontalAlignment="Center"
                                                Foreground="{StaticResource Color.WhiteBrush}"
-                                               FontSize="{StaticResource FontSize.Medium}"
+                                               FontSize="{StaticResource FontSize.Large}"
                                                FontFamily="{StaticResource Lato.Light}" />
                                     </Border>
                                 </Border>
@@ -46,7 +46,7 @@
                                     <StackPanel VerticalAlignment="Center">
                                         <TextBlock Text="{Binding Name}" 
                                                FontFamily="{StaticResource Lato.Regular}" 
-                                               FontSize="{StaticResource FontSize.Medium}"
+                                               FontSize="{StaticResource FontSize.Large}"
                                                Foreground="{StaticResource Color.BlueBrush}" 
                                                TextTrimming="CharacterEllipsis" />
                                         <TextBlock Text="{Binding Message}" 

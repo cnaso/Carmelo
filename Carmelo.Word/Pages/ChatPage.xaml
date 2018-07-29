@@ -7,9 +7,8 @@
       xmlns:core="clr-namespace:Carmelo.Word.Core;assembly=Carmelo.Word.Core"
       mc:Ignorable="d" 
       d:DesignHeight="700" d:DesignWidth="700"
-      Title="ChatPage">
-
-    <Border Background="Transparent">
-        
+      Title="Chat Page">
+    <Border>
+        <local:ChatMessageListControl />
     </Border>
 </local:BasePage>

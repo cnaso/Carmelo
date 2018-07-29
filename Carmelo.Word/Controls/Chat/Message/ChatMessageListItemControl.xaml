@@ -4,67 +4,121 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Carmelo.Word"
+             xmlns:core="clr-namespace:Carmelo.Word.Core;assembly=Carmelo.Word.Core"
              mc:Ignorable="d" 
              d:DesignWidth="400">
-    <Border Padding="5">
+    <Border d:DataContext="{x:Static core:ChatMessageListItemDesignModel.Instance}" Padding="5">
         <Grid>
-            <StackPanel Orientation="Horizontal">
-                
-                <!-- User initials -->
-                <Border CornerRadius="{Binding ActualWidth, RelativeSource={RelativeSource Self}}"
-                        Height="{Binding ActualWidth, RelativeSource={RelativeSource Self}}"
-                        HorizontalAlignment="Left"
-                        Margin="5 3 5 0"
-                        Width="35"
-                        Background="Red"
-                        VerticalAlignment="Top">
 
-                    <TextBlock Foreground="{StaticResource Color.WhiteBrush}"
-                               FontFamily="{StaticResource Lato.Regular}"
-                               HorizontalAlignment="Center"
-                               Text="LM"
-                               VerticalAlignment="Center" />
+            <!-- User initials -->
+            <Border CornerRadius="{Binding ActualWidth, RelativeSource={RelativeSource Self}}"
+                    Background="{Binding ProfilePictureRGB, Converter={local:StringToBrushValueConverter}}"
+                    BorderBrush="{StaticResource Color.FadedGrayBrush}"
+                    BorderThickness="1"
+                    Height="{Binding ActualWidth, RelativeSource={RelativeSource Self}}"
+                    HorizontalAlignment="Left"
+                    Margin="5 3 5 0"
+                    Width="45"
+                    VerticalAlignment="Top"
+                    Visibility="{Binding IsSentByMe, Converter={local:InverseBooleanToVisibilityValueConverter}}">
+
+                <TextBlock Foreground="{StaticResource Color.WhiteBrush}"
+                           FontFamily="{StaticResource Lato.Regular}"
+                           FontSize="{StaticResource FontSize.XLarge}"
+                           HorizontalAlignment="Center"
+                           Text="{Binding Initials}"
+                           VerticalAlignment="Center" />
+            </Border>
+
+            <!-- Message bubble triangle for recieved messages -->
+            <Path Data="M 15,10 L 10,15 15,20"
+                      Fill="{StaticResource Color.WhiteBrush}"
+                      Margin="45 0 15 0"
+                      Visibility="{Binding IsSentByMe, Converter={local:InverseBooleanToVisibilityValueConverter}}" />
+
+            <!-- Message container -->
+            <Grid HorizontalAlignment="{Binding IsSentByMe, Converter={local:MessageDateTimeAlignmentValueConverter}}"
+                  Margin="60 0 15 0">
+
+                <!-- Display date/times on hover -->
+                <Grid.Triggers>
+                    <EventTrigger RoutedEvent="MouseEnter">
+                        <BeginStoryboard>
+                            <Storyboard Storyboard.TargetName="DatePanel" Storyboard.TargetProperty="Opacity">
+                                <DoubleAnimation To="1" Duration="00:00:00.3" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                    <EventTrigger RoutedEvent="MouseLeave">
+                        <BeginStoryboard>
+                            <Storyboard Storyboard.TargetName="DatePanel" Storyboard.TargetProperty="Opacity">
+                                <DoubleAnimation To="0" Duration="00:00:00.3" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Grid.Triggers>
+                
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <!-- Bubble -->
+                <Border Grid.Column="0" Grid.Row="0" 
+                         Background="{Binding IsSentByMe, Converter={local:MessageSentByColorValueConveter}}"
+                         CornerRadius="10"
+                         Padding="15">
+
+                    <Border.Effect>
+                        <DropShadowEffect ShadowDepth="1" BlurRadius="1" />
+                    </Border.Effect>
+
+                    <TextBox Background="Transparent"
+                         BorderThickness="0"
+                         Foreground="{StaticResource Color.BlackBrush}" 
+                         FontFamily="{StaticResource Lato.Light}"
+                         FontSize="{StaticResource FontSize.Normal}"
+                         IsReadOnly="True"
+                         Margin="0"
+                         Padding="0"
+                         Text="{Binding Message, Mode=OneWay}"
+                         TextWrapping="Wrap" />
                 </Border>
 
-                <!-- Message container -->
-                <Grid>
+                <StackPanel x:Name="DatePanel"
+                            Grid.Column="0" 
+                            Grid.Row="1"
+                            HorizontalAlignment="{Binding IsSentByMe, Converter={local:MessageDateTimeAlignmentValueConverter}, ConverterParameter=false}"
+                            Opacity="0"
+                            Orientation="Horizontal">
 
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="Auto" />
-                    </Grid.RowDefinitions>
-
-                    <!-- Bubble -->
-                    <Border Grid.Row="0" 
-                            Background="{StaticResource Color.WhiteBrush}"
-                            CornerRadius="10"
-                            HorizontalAlignment="Left"
-                            Padding="15">
-
-                        <!-- Message text -->
-                        <TextBlock Foreground="{StaticResource Color.BlackBrush}" 
-                                   FontFamily="{StaticResource Lato.Light}"
-                                   Text="This chat app is awesome! When is it coming out?"
-                                   TextWrapping="Wrap"
-                                   VerticalAlignment="Center" />
-                    </Border>
-                    
-                    <!-- Message bubble triangle -->
-                    <Path Grid.Row="1" 
-                          Data="M 0,0 L 5,5 10,0"
-                          Fill="{StaticResource Color.WhiteBrush}"
-                          Margin="15 0 15 0"/>
-
-                    <!-- Message date -->
-                    <TextBlock Grid.Row="2"
-                               Foreground="{StaticResource Color.WhiteBrush}"
+                    <!-- Message sent date/time -->
+                    <TextBlock Foreground="{StaticResource Color.WhiteBrush}"
                                FontFamily="{StaticResource Lato.Regular}"
-                               FontSize="{StaticResource FontSize.XSmall}"
+                               FontSize="{StaticResource FontSize.Smaller}"
                                HorizontalAlignment="Right"
-                               Text="11:54 pm" />
-                </Grid>
-            </StackPanel>
+                               Margin="5 2 15 0"
+                               Text="{Binding MessageSentTime, Converter={local:MessageSentDateTimeValueConverter}}" />
+
+                    <!-- Message sent date/time -->
+                    <TextBlock Foreground="{StaticResource Color.DarkBlueBrush}"
+                               FontFamily="{StaticResource Lato.Regular}"
+                               FontSize="{StaticResource FontSize.Smaller}"
+                               HorizontalAlignment="Right"
+                               Margin="0 2 5 0"
+                               Text="{Binding MessageReadTime, Converter={local:MessageReadDateTimeValueConverter}}" />
+                </StackPanel>
+
+                <!-- Message bubble triangle for sent messages -->
+                <Path Grid.Column="1" Grid.Row="0" 
+                      Data="M 0,10 L 5,15 0,20"
+                      Fill="{Binding IsSentByMe, Converter={local:MessageSentByColorValueConveter}}"
+                      Visibility="{Binding IsSentByMe, Converter={local:InverseBooleanToVisibilityValueConverter}, ConverterParameter=True}" />
+            </Grid>
         </Grid>
     </Border>
 </UserControl>

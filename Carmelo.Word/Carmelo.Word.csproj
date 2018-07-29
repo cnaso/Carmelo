@@ -113,6 +113,10 @@
     <Compile Include="Pages\RegisterPage.xaml.cs">
       <DependentUpon>RegisterPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ValueConverters\MessageSentByColorValueConveter.cs" />
+    <Compile Include="ValueConverters\MessageReadDateTimeValueConverter.cs" />
+    <Compile Include="ValueConverters\MessageDateTimeAlignmentValueConverter.cs" />
+    <Compile Include="ValueConverters\MessageSentDateTimeValueConverter.cs" />
     <Compile Include="ValueConverters\StringToBrushValueConverter.cs" />
     <Compile Include="Pages\LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
