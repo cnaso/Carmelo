@@ -74,7 +74,7 @@
         <Setter Property="Background" Value="{StaticResource Color.OrangeBrush}" />
         <Setter Property="Foreground" Value="{StaticResource Color.WhiteBrush}" />
         <Setter Property="BorderThickness" Value="0" />
-        <Setter Property="FontSize" Value="{StaticResource FontSize.Large}" />
+        <Setter Property="FontSize" Value="{StaticResource FontSize.Largest}" />
         <Setter Property="FontFamily" Value="{StaticResource Lato.Regular}" />
         <Setter Property="Padding" Value="50 10" />
         <Setter Property="Margin" Value="0 10" />
@@ -141,7 +141,7 @@
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="Foreground" Value="{StaticResource Color.WhiteBrush}" />
         <Setter Property="BorderThickness" Value="0" />
-        <Setter Property="FontSize" Value="{StaticResource FontSize.Regular}" />
+        <Setter Property="FontSize" Value="{StaticResource FontSize.Larger}" />
         <Setter Property="FontFamily" Value="{StaticResource Lato.Regular}" />
         <Setter Property="Padding" Value="50 10" />
         <Setter Property="Margin" Value="0 10" />

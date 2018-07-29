@@ -22,11 +22,11 @@
                         <!-- Title and subtitle text -->
                         <StackPanel>
                             <TextBlock Text="Sign Up" 
-                                       FontSize="{StaticResource FontSize.Large}" 
+                                       FontSize="{StaticResource FontSize.Largest}" 
                                        FontFamily="{StaticResource Lato.Regular}" 
                                        Foreground="{StaticResource Color.BlueBrush}" />
                             <TextBlock Text="It's about to get fun" 
-                                       FontSize="{StaticResource FontSize.Regular}" 
+                                       FontSize="{StaticResource FontSize.Larger}" 
                                        Foreground="{StaticResource Color.FadedDarkGrayBrush}" 
                                        Margin="0 5 0 20" />
                             
